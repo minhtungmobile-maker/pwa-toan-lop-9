@@ -1,0 +1,142 @@
+﻿{
+  "chuong1": {
+    "ten": "Chương I: Hệ thức lượng trong tam giác vuông",
+    "bai": [
+      {
+        "ma": "hh-ch1-bai1",
+        "ten": "Bài 1: Một số hệ thức về cạnh và đường cao trong tam giác vuông",
+        "tom_tat": "5 hệ thức cơ bản.",
+        "file": "lessons/hh-ch1-bai1.html"
+      },
+      {
+        "ma": "hh-ch1-bai2",
+        "ten": "Bài 2: Tỉ số lượng giác của góc nhọn",
+        "tom_tat": "Định nghĩa sin, cos, tan, cot.",
+        "file": "lessons/hh-ch1-bai2.html"
+      },
+      {
+        "ma": "hh-ch1-bai3",
+        "ten": "Bài 3: Bảng lượng giác",
+        "tom_tat": "Sử dụng bảng hoặc máy tính.",
+        "file": "lessons/hh-ch1-bai3.html"
+      },
+      {
+        "ma": "hh-ch1-bai4",
+        "ten": "Bài 4: Một số hệ thức về cạnh và góc trong tam giác vuông",
+        "tom_tat": "Ứng dụng tỉ số lượng giác.",
+        "file": "lessons/hh-ch1-bai4.html"
+      }
+    ]
+  },
+  "chuong2": {
+    "ten": "Chương II: Đường tròn",
+    "bai": [
+      {
+        "ma": "hh-ch2-bai1",
+        "ten": "Bài 1: Sự xác định đường tròn. Tính chất đối xứng của đường tròn",
+        "tom_tat": "Tâm, bán kính, trục đối xứng.",
+        "file": "lessons/hh-ch2-bai1.html"
+      },
+      {
+        "ma": "hh-ch2-bai2",
+        "ten": "Bài 2: Đường kính và dây của đường tròn",
+        "tom_tat": "Mối quan hệ giữa đường kính và dây.",
+        "file": "lessons/hh-ch2-bai2.html"
+      },
+      {
+        "ma": "hh-ch2-bai3",
+        "ten": "Bài 3: Liên hệ giữa dây và khoảng cách từ tâm đến dây",
+        "tom_tat": "So sánh dây dựa trên khoảng cách.",
+        "file": "lessons/hh-ch2-bai3.html"
+      },
+      {
+        "ma": "hh-ch2-bai4",
+        "ten": "Bài 4: Vị trí tương đối của đường thẳng và đường tròn",
+        "tom_tat": "Cắt, tiếp xúc, không giao nhau.",
+        "file": "lessons/hh-ch2-bai4.html"
+      },
+      {
+        "ma": "hh-ch2-bai5",
+        "ten": "Bài 5: Dấu hiệu nhận biết tiếp tuyến của đường tròn",
+        "tom_tat": "Tiếp tuyến vuông góc bán kính.",
+        "file": "lessons/hh-ch2-bai5.html"
+      },
+      {
+        "ma": "hh-ch2-bai6",
+        "ten": "Bài 6: Tính chất của hai tiếp tuyến cắt nhau",
+        "tom_tat": "Độ dài bằng nhau, phân giác góc.",
+        "file": "lessons/hh-ch2-bai6.html"
+      },
+      {
+        "ma": "hh-ch2-bai7",
+        "ten": "Bài 7: Vị trí tương đối của hai đường tròn",
+        "tom_tat": "Cắt nhau, tiếp xúc, không giao nhau.",
+        "file": "lessons/hh-ch2-bai7.html"
+      }
+    ]
+  },
+  "chuong3": {
+    "ten": "Chương III: Góc với đường tròn",
+    "bai": [
+      {
+        "ma": "hh-ch3-bai1",
+        "ten": "Bài 1: Góc ở tâm. Số đo cung",
+        "tom_tat": "Góc ở tâm, cung bị chắn.",
+        "file": "lessons/hh-ch3-bai1.html"
+      },
+      {
+        "ma": "hh-ch3-bai2",
+        "ten": "Bài 2: Liên hệ giữa cung và dây",
+        "tom_tat": "So sánh cung và dây.",
+        "file": "lessons/hh-ch3-bai2.html"
+      },
+      {
+        "ma": "hh-ch3-bai3",
+        "ten": "Bài 3: Góc nội tiếp",
+        "tom_tat": "Số đo bằng nửa cung bị chắn.",
+        "file": "lessons/hh-ch3-bai3.html"
+      },
+      {
+        "ma": "hh-ch3-bai4",
+        "ten": "Bài 4: Góc tạo bởi tia tiếp tuyến và dây cung",
+        "tom_tat": "Số đo bằng nửa cung bị chắn.",
+        "file": "lessons/hh-ch3-bai4.html"
+      },
+      {
+        "ma": "hh-ch3-bai5",
+        "ten": "Bài 5: Góc có đỉnh ở bên trong đường tròn. Góc có đỉnh ở bên ngoài đường tròn",
+        "tom_tat": "Công thức tính số đo.",
+        "file": "lessons/hh-ch3-bai5.html"
+      },
+      {
+        "ma": "hh-ch3-bai6",
+        "ten": "Bài 6: Cung chứa góc",
+        "tom_tat": "Quỹ tích điểm nhìn đoạn AB dưới góc \\(\\alpha\\).",
+        "file": "lessons/hh-ch3-bai6.html"
+      }
+    ]
+  },
+  "chuong4": {
+    "ten": "Chương IV: Hình trụ - Hình nón - Hình cầu",
+    "bai": [
+      {
+        "ma": "hh-ch4-bai1",
+        "ten": "Bài 1: Hình trụ. Diện tích xung quanh và thể tích",
+        "tom_tat": "Công thức \\(S_{xq} = 2\\pi rh\\), \\(V = \\pi r^2 h\\).",
+        "file": "lessons/hh-ch4-bai1.html"
+      },
+      {
+        "ma": "hh-ch4-bai2",
+        "ten": "Bài 2: Hình nón - Hình nón cụt",
+        "tom_tat": "Diện tích xung quanh, thể tích.",
+        "file": "lessons/hh-ch4-bai2.html"
+      },
+      {
+        "ma": "hh-ch4-bai3",
+        "ten": "Bài 3: Hình cầu. Diện tích mặt cầu và thể tích",
+        "tom_tat": "Công thức \\(S = 4\\pi r^2\\), \\(V = \\frac{4}{3}\\pi r^3\\).",
+        "file": "lessons/hh-ch4-bai3.html"
+      }
+    ]
+  }
+}

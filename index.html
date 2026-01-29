@@ -1,0 +1,304 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Ứng dụng học Toán 9 chuẩn SGK – hỗ trợ ôn tập hiệu quả">
+  <title>Toán 9 – Học Theo Dạng</title>
+
+  <!-- PWA -->
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#1976d2">
+  <link rel="apple-touch-icon" href="icon-192.png">
+
+  <!-- CSS -->
+  <style>
+    :root {
+      --primary: #1976d2;
+      --accent: #ff6f00;
+      --success: #4caf50;
+      --light: #f5f9ff;
+      --card: #ffffff;
+      --text: #212121;
+    }
+    body.dark-mode {
+      --card: #1e1e1e;
+      --text: #e0e0e0;
+      --light: #121212;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--light);
+      padding-bottom: 2rem;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 1.2rem;
+      text-align: center;
+      position: relative;
+    }
+    #theme-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: none;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.8rem;
+      flex-wrap: wrap;
+      background: var(--light);
+    }
+    .tab-btn {
+      background: #e3f2fd;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .tab-btn.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .section { display: none; }
+    .section.active { display: block; }
+
+    .card {
+      max-width: 800px;
+      margin: 1.5rem auto;
+      padding: 1.5rem;
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .topic-card {
+      background: #e3f2fd;
+      padding: 1.2rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .topic-card:hover {
+      transform: translateY(-3px);
+      background: #bbdefb;
+    }
+
+    /* Nút điều hướng */
+    .nav-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .nav-btn {
+      background: var(--light);
+      color: var(--primary);
+      border: 2px solid var(--primary);
+      padding: 0.6rem 1.2rem;
+      border-radius: 10px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .nav-btn:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .tabs { flex-direction: column; align-items: stretch; }
+      .tab-btn { width: 100%; }
+      .nav-buttons { flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📘 TOÁN LỚP 9</h1>
+    <button id="theme-toggle">🌙</button>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab-btn active" data-tab="home">Trang chủ</button>
+    <button class="tab-btn" data-tab="learn">Học theo bài</button>
+    <button class="tab-btn" data-tab="practice">Luyện đề</button>
+    <button class="tab-btn" data-tab="progress">Tiến bộ</button>
+    <button class="tab-btn" data-tab="contact">Phụ huynh</button>
+  </nav>
+
+  <!-- TRANG CHỦ -->
+  <section id="home" class="section active">
+    <div class="card">
+      <h2>🌟 HỌC TOÁN 9 THEO DẠNG – CÔNG THỨC – MẸO</h2>
+      <p>Ứng dụng này giúp bạn:</p>
+      <ul style="margin:1rem 0;padding-left:1.5rem;">
+        <li>✅ Học từng dạng toán cụ thể</li>
+        <li>✅ Nắm công thức tối thiểu</li>
+        <li>✅ Làm bài ngay sau lý thuyết</li>
+        <li>✅ Ôn tập theo đề thi thật</li>
+      </ul>
+      <button onclick="showSection('learn')" style="background:#1976d2;color:white;border:none;padding:0.6rem 1.2rem;border-radius:8px;margin-top:1rem;">➡️ BẮT ĐẦU HỌC</button>
+    </div>
+  </section>
+
+  <!-- HỌC THEO BÀI -->
+  <section id="learn" class="section">
+    <div class="card">
+      <h2>📚 HỌC THEO DẠNG TOÁN</h2>
+      <div class="topic-grid">
+        <div class="topic-card" onclick="window.location='lessons/ds-ch1-bai1.html'">
+          <h3>🔢 Căn bậc hai</h3>
+          <p>Công thức + ví dụ + làm ngay</p>
+        </div>
+        <div class="topic-card" onclick="window.location='lessons/hh-ch1-bai1.html'">
+          <h3>📐 Hệ thức lượng</h3>
+          <p>5 hệ thức + mẹo nhớ</p>
+        </div>
+        <div class="topic-card" onclick="window.location='lessons/ds-ch2-bai1.html'">
+          <h3>📈 Hàm số bậc nhất</h3>
+          <p>Đồ thị + ứng dụng</p>
+        </div>
+        <div class="topic-card" onclick="window.location='lessons/ds-ch3-bai1.html'">
+          <h3>🧮 Hệ phương trình</h3>
+          <p>Thế + cộng đại số</p>
+        </div>
+        <div class="topic-card" onclick="window.location='lessons/ds-ch4-bai1.html'">
+          <h3>📉 Hàm số y = ax²</h3>
+          <p>Parabol + đỉnh</p>
+        </div>
+        <div class="topic-card" onclick="window.location='lessons/hh-ch2-bai1.html'">
+          <h3>⭕ Đường tròn</h3>
+          <p>Tâm – bán kính – tiếp tuyến</p>
+        </div>
+      </div>
+      <div class="nav-buttons">
+        <a href="#" class="nav-btn" onclick="history.back()">← Quay lại trang trước</a>
+        <a href="./" class="nav-btn">🏠 Về trang chủ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LUYỆN ĐỀ -->
+  <section id="practice" class="section">
+    <div class="card">
+      <h2>📝 LUYỆN ĐỀ THI THẬT</h2>
+      <ul style="list-style:none;padding:0;">
+        <li style="margin:0.5rem 0;"><a href="exercises/de-on-thi-vao-10-mau-1.html">Mẫu 1 – Hà Nội</a></li>
+        <li style="margin:0.5rem 0;"><a href="exercises/de-on-thi-vao-10-mau-2.html">Mẫu 2 – TP.HCM</a></li>
+        <li style="margin:0.5rem 0;"><a href="exercises/de-on-thi-vao-10-de-3.html">Đề 3 – Tổng hợp</a></li>
+        <li style="margin:0.5rem 0;"><a href="exercises/de-kiem-tra-15p-ch1.html">Kiểm tra 15 phút – Chương I</a></li>
+        <li style="margin:0.5rem 0;"><a href="exercises/de-kiem-tra-1-tiet-ch1.html">Kiểm tra 1 tiết – Chương I</a></li>
+      </ul>
+      <div class="nav-buttons">
+        <a href="#" class="nav-btn" onclick="history.back()">← Quay lại trang trước</a>
+        <a href="./" class="nav-btn">🏠 Về trang chủ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIẾN BỘ -->
+  <section id="progress" class="section">
+    <div class="card">
+      <h2>📈 TIẾN BỘ HỌC TẬP</h2>
+      <p>✅ Đã học: <strong id="lesson-count">0</strong> bài</p>
+      <p>✅ Đã làm: <strong id="exercise-count">0</strong> đề</p>
+      <div class="nav-buttons">
+        <a href="#" class="nav-btn" onclick="history.back()">← Quay lại trang trước</a>
+        <a href="./" class="nav-btn">🏠 Về trang chủ</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- PHỤ HUYNH -->
+  <section id="contact" class="section">
+    <div class="card">
+      <h2>📞 GỬI PHỤ HUYNH</h2>
+      <p>Ứng dụng này hoàn toàn <strong>miễn phí</strong>, không quảng cáo, không thu thập dữ liệu.</p>
+      <p>Nếu thấy con học được, xin hãy:</p>
+      <ul style="margin:1rem 0;padding-left:1.5rem;">
+        <li>👉 Khuyến khích con tiếp tục</li>
+        <li>👉 Chia sẻ với gia đình khác</li>
+        <li>👉 Cài app để dùng offline</li>
+      </ul>
+      <div class="nav-buttons">
+        <a href="#" class="nav-btn" onclick="history.back()">← Quay lại trang trước</a>
+        <a href="./" class="nav-btn">🏠 Về trang chủ</a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2026 | HSTAI 777 – Hỗ trợ học sinh Việt Nam</p>
+  </footer>
+
+  <script>
+    // Dark mode
+    const toggle = document.getElementById('theme-toggle');
+    const isDark = localStorage.getItem('theme') === 'dark' || 
+                   (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    if (isDark) {
+      document.body.classList.add('dark-mode');
+      toggle.textContent = '☀️';
+    }
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      const now = document.body.classList.contains('dark-mode');
+      localStorage.setItem('theme', now ? 'dark' : 'light');
+      toggle.textContent = now ? '☀️' : '🌙';
+    });
+
+    // Tab switching
+    function showSection(id) {
+      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+      const btn = document.querySelector(`[data-tab="${id}"]`);
+      if (btn) btn.classList.add('active');
+    }
+
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const tab = btn.getAttribute('data-tab');
+        showSection(tab);
+      });
+    });
+
+    // Service Worker
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>

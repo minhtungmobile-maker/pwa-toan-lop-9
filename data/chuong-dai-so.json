@@ -1,0 +1,160 @@
+﻿{
+  "chuong1": {
+    "ten": "Chương I: Căn bậc hai. Căn bậc ba",
+    "bai": [
+      {
+        "ma": "ds-ch1-bai1",
+        "ten": "Bài 1: Căn bậc hai",
+        "tom_tat": "Định nghĩa căn bậc hai số học, so sánh căn bậc hai.",
+        "file": "lessons/ds-ch1-bai1.html"
+      },
+      {
+        "ma": "ds-ch1-bai2",
+        "ten": "Bài 2: Căn thức bậc hai và hằng đẳng thức \\(\\sqrt{A^2} = |A|\\)",
+        "tom_tat": "Điều kiện xác định, hằng đẳng thức cơ bản.",
+        "file": "lessons/ds-ch1-bai2.html"
+      },
+      {
+        "ma": "ds-ch1-bai3",
+        "ten": "Bài 3: Liên hệ giữa phép nhân và phép khai phương",
+        "tom_tat": "Quy tắc khai phương một tích.",
+        "file": "lessons/ds-ch1-bai3.html"
+      },
+      {
+        "ma": "ds-ch1-bai4",
+        "ten": "Bài 4: Liên hệ giữa phép chia và phép khai phương",
+        "tom_tat": "Quy tắc khai phương một thương.",
+        "file": "lessons/ds-ch1-bai4.html"
+      },
+      {
+        "ma": "ds-ch1-bai5",
+        "ten": "Bài 5: Biến đổi đơn giản biểu thức chứa căn bậc hai",
+        "tom_tat": "Đưa thừa số ra ngoài dấu căn, đưa vào trong dấu căn.",
+        "file": "lessons/ds-ch1-bai5.html"
+      },
+      {
+        "ma": "ds-ch1-bai6",
+        "ten": "Bài 6: Rút gọn biểu thức chứa căn bậc hai",
+        "tom_tat": "Rút gọn tổng hợp, ứng dụng thực tế.",
+        "file": "lessons/ds-ch1-bai6.html"
+      },
+      {
+        "ma": "ds-ch1-bai7",
+        "ten": "Bài 7: Căn bậc ba",
+        "tom_tat": "Định nghĩa và tính chất căn bậc ba.",
+        "file": "lessons/ds-ch1-bai7.html"
+      }
+    ]
+  },
+  "chuong2": {
+    "ten": "Chương II: Hàm số bậc nhất",
+    "bai": [
+      {
+        "ma": "ds-ch2-bai1",
+        "ten": "Bài 1: Nhắc lại và bổ sung các khái niệm về hàm số",
+        "tom_tat": "Hàm số, biến số, giá trị hàm số.",
+        "file": "lessons/ds-ch2-bai1.html"
+      },
+      {
+        "ma": "ds-ch2-bai2",
+        "ten": "Bài 2: Hàm số bậc nhất",
+        "tom_tat": "Định nghĩa, tính đồng biến – nghịch biến.",
+        "file": "lessons/ds-ch2-bai2.html"
+      },
+      {
+        "ma": "ds-ch2-bai3",
+        "ten": "Bài 3: Đồ thị của hàm số \\(y = ax + b\\)",
+        "tom_tat": "Vẽ đồ thị, giao điểm với trục tọa độ.",
+        "file": "lessons/ds-ch2-bai3.html"
+      },
+      {
+        "ma": "ds-ch2-bai4",
+        "ten": "Bài 4: Đường thẳng song song và đường thẳng cắt nhau",
+        "tom_tat": "Điều kiện để hai đường thẳng song song, cắt nhau.",
+        "file": "lessons/ds-ch2-bai4.html"
+      },
+      {
+        "ma": "ds-ch2-bai5",
+        "ten": "Bài 5: Hệ số góc của đường thẳng \\(y = ax + b\\)",
+        "tom_tat": "Ý nghĩa hình học của hệ số \\(a\\).",
+        "file": "lessons/ds-ch2-bai5.html"
+      }
+    ]
+  },
+  "chuong3": {
+    "ten": "Chương III: Hệ hai phương trình bậc nhất hai ẩn",
+    "bai": [
+      {
+        "ma": "ds-ch3-bai1",
+        "ten": "Bài 1: Phương trình bậc nhất hai ẩn",
+        "tom_tat": "Nghiệm, biểu diễn hình học.",
+        "file": "lessons/ds-ch3-bai1.html"
+      },
+      {
+        "ma": "ds-ch3-bai2",
+        "ten": "Bài 2: Hệ hai phương trình bậc nhất hai ẩn",
+        "tom_tat": "Khái niệm nghiệm của hệ.",
+        "file": "lessons/ds-ch3-bai2.html"
+      },
+      {
+        "ma": "ds-ch3-bai3",
+        "ten": "Bài 3: Giải hệ phương trình bằng phương pháp thế",
+        "tom_tat": "Các bước giải hệ bằng thế.",
+        "file": "lessons/ds-ch3-bai3.html"
+      },
+      {
+        "ma": "ds-ch3-bai4",
+        "ten": "Bài 4: Giải hệ phương trình bằng phương pháp cộng đại số",
+        "tom_tat": "Cộng hai phương trình để khử ẩn.",
+        "file": "lessons/ds-ch3-bai4.html"
+      },
+      {
+        "ma": "ds-ch3-bai5",
+        "ten": "Bài 5: Giải bài toán bằng cách lập hệ phương trình",
+        "tom_tat": "Ứng dụng vào bài toán thực tế.",
+        "file": "lessons/ds-ch3-bai5.html"
+      }
+    ]
+  },
+  "chuong4": {
+    "ten": "Chương IV: Hàm số \\(y = ax^2\\) (\\(a \\ne 0\\)). Phương trình bậc hai một ẩn",
+    "bai": [
+      {
+        "ma": "ds-ch4-bai1",
+        "ten": "Bài 1: Hàm số \\(y = ax^2\\)",
+        "tom_tat": "Tính chất, đồ thị parabol.",
+        "file": "lessons/ds-ch4-bai1.html"
+      },
+      {
+        "ma": "ds-ch4-bai2",
+        "ten": "Bài 2: Đồ thị của hàm số \\(y = ax^2\\)",
+        "tom_tat": "Vẽ và nhận dạng parabol.",
+        "file": "lessons/ds-ch4-bai2.html"
+      },
+      {
+        "ma": "ds-ch4-bai3",
+        "ten": "Bài 3: Phương trình bậc hai một ẩn",
+        "tom_tat": "Dạng tổng quát, nghiệm.",
+        "file": "lessons/ds-ch4-bai3.html"
+      },
+      {
+        "ma": "ds-ch4-bai4",
+        "ten": "Bài 4: Công thức nghiệm của phương trình bậc hai",
+        "tom_tat": "Công thức nghiệm, biệt thức \\(\\Delta\\).",
+        "file": "lessons/ds-ch4-bai4.html"
+      },
+      {
+        "ma": "ds-ch4-bai5",
+        "ten": "Bài 5: Hệ thức Vi-ét và ứng dụng",
+        "tom_tat": "Mối liên hệ giữa nghiệm và hệ số.",
+        "file": "lessons/ds-ch4-bai5.html"
+      },
+      {
+        "ma": "ds-ch4-bai6",
+        "ten": "Bài 6: Giải bài toán bằng cách lập phương trình bậc hai",
+        "tom_tat": "Ứng dụng vào chuyển động, diện tích...",
+        "file": "lessons/ds-ch4-bai6.html"
+      }
+    ]
+  }
+}
