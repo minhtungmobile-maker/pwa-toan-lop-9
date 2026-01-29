@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 2: Hệ hai phương trình bậc nhất hai ẩn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Toán 9 – Đại số</h1>
+    <p>Bài 2: Hệ hai phương trình bậc nhất hai ẩn</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Khái niệm hệ phương trình</h2>
+      <p>Hệ hai phương trình bậc nhất hai ẩn có dạng:
+        \[
+        \begin{cases}
+          a_1x + b_1y = c_1 \\
+          a_2x + b_2y = c_2
+        \end{cases}
+        \]
+      </p>
+      
+      <h2>2. Nghiệm của hệ</h2>
+      <p>Nghiệm của hệ là nghiệm chung của hai phương trình, tức là cặp số \( (x_0; y_0) \) thỏa mãn cả hai phương trình.</p>
+      
+      <h2>3. Minh họa hình học</h2>
+      <p>Mỗi phương trình biểu diễn một đường thẳng. Nghiệm của hệ là tọa độ giao điểm của hai đường thẳng đó.</p>
+      <ul>
+        <li><strong>Cắt nhau</strong> → hệ có **một nghiệm duy nhất**</li>
+        <li><strong>Song song</strong> → hệ **vô nghiệm**</li>
+        <li><strong>Trùng nhau</strong> → hệ có **vô số nghiệm**</li>
+      </ul>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Kiểm tra xem \( (2; -1) \) có là nghiệm của hệ sau không:
+        \[
+        \begin{cases}
+          x + y = 1 \\
+          2x - y = 5
+        \end{cases}
+        \]</p>
+      
+      <h2>5. Đáp án</h2>
+      <p><strong>Câu 1:</strong><br>
+         Thay \( x = 2, y = -1 \):<br>
+         PT1: \( 2 + (-1) = 1 \) → đúng<br>
+         PT2: \( 2 \cdot 2 - (-1) = 5 \) → đúng<br>
+         → \( (2; -1) \) là nghiệm của hệ.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_Ch3_Bai2.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

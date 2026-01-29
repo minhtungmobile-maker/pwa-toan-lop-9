@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 3: Bảng lượng giác</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📐 Toán 9 – Hình học</h1>
+    <p>Bài 3: Bảng lượng giác</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Mục đích</h2>
+      <p>Bảng lượng giác giúp tra cứu giá trị gần đúng của \( \sin, \cos, \tan, \cot \) của các góc nhọn (từ \( 0^\circ \) đến \( 90^\circ \)).</p>
+      
+      <h2>2. Cách dùng</h2>
+      <p><strong>Ví dụ:</strong> Tìm \( \sin 35^\circ \).<br>
+         Tra bảng: \( \sin 35^\circ \approx 0.5736 \).</p>
+      
+      <p><strong>Lưu ý:</strong> Ngày nay, ta thường dùng máy tính bỏ túi thay cho bảng.</p>
+      
+      <h2>3. Tính chất tăng/giảm</h2>
+      <ul>
+        <li>\( \sin \alpha \) và \( \tan \alpha \) <strong>tăng</strong> khi \( \alpha \) tăng</li>
+        <li>\( \cos \alpha \) và \( \cot \alpha \) <strong>giảm</strong> khi \( \alpha \) tăng</li>
+      </ul>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> So sánh:<br>
+         a) \( \sin 40^\circ \) và \( \sin 50^\circ \)<br>
+         b) \( \cos 30^\circ \) và \( \cos 60^\circ \)</p>
+      
+      <h2>5. Đáp án</h2>
+      <p>a) Vì \( 40^\circ < 50^\circ \) và sin tăng → \( \sin 40^\circ < \sin 50^\circ \)<br>
+         b) Vì cos giảm → \( \cos 30^\circ > \cos 60^\circ \)</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_HH_Ch1_Bai3.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

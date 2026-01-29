@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 1: Sự xác định đường tròn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📐 Toán 9 – Hình học</h1>
+    <p>Bài 1: Sự xác định đường tròn. Tính chất đối xứng của đường tròn</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Định nghĩa</h2>
+      <p>Đường tròn tâm \( O \), bán kính \( R \) (\( R > 0 \)) là hình gồm các điểm cách \( O \) một khoảng bằng \( R \). Kí hiệu: \( (O; R) \).</p>
+      
+      <h2>2. Cách xác định đường tròn</h2>
+      <ul>
+        <li>Biết tâm và bán kính</li>
+        <li>Biết đoạn thẳng là đường kính</li>
+        <li><strong>Qua 3 điểm không thẳng hàng</strong>: luôn vẽ được duy nhất một đường tròn</li>
+      </ul>
+      
+      <h2>3. Tính chất đối xứng</h2>
+      <ul>
+        <li>Đường tròn là hình có <strong>tâm đối xứng</strong> (tâm là tâm đối xứng)</li>
+        <li>Đường tròn là hình có <strong>vô số trục đối xứng</strong> (mỗi đường kính là một trục đối xứng)</li>
+      </ul>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Vẽ đường tròn đi qua 3 điểm \( A, B, C \) không thẳng hàng.</p>
+      
+      <h2>5. Hướng dẫn</h2>
+      <p>Dựng trung trực của \( AB \) và \( AC \). Giao điểm là tâm \( O \). Bán kính \( OA \).</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_HH_Ch2_Bai1.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

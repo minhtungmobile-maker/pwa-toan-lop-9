@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 4: Vị trí tương đối của đường thẳng và đường tròn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📐 Toán 9 – Hình học</h1>
+    <p>Bài 4: Vị trí tương đối của đường thẳng và đường tròn</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Ba vị trí tương đối</h2>
+      <p>Gọi \( d \) là khoảng cách từ tâm \( O \) đến đường thẳng \( a \), \( R \) là bán kính đường tròn \( (O; R) \).</p>
+      
+      <table border="1" cellpadding="8" style="width:100%; margin:1rem 0; border-collapse:collapse;">
+        <tr><th>Vị trí</th><th>Điều kiện</th><th>Số điểm chung</th></tr>
+        <tr><td>Đường thẳng cắt đường tròn</td><td>\( d < R \)</td><td>2</td></tr>
+        <tr><td>Đường thẳng tiếp xúc đường tròn</td><td>\( d = R \)</td><td>1</td></tr>
+        <tr><td>Đường thẳng không giao đường tròn</td><td>\( d > R \)</td><td>0</td></tr>
+      </table>
+      
+      <h2>2. Tiếp tuyến</h2>
+      <p>Khi \( d = R \), đường thẳng \( a \) gọi là <strong>tiếp tuyến</strong> của đường tròn, điểm chung gọi là <strong>tiếp điểm</strong>.</p>
+      
+      <h2>3. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Cho đường tròn \( (O; 5\,\text{cm}) \). Khoảng cách từ \( O \) đến đường thẳng \( a \) là \( 3\,\text{cm} \). Xác định vị trí tương đối.</p>
+      
+      <p><strong>Câu 2:</strong> Đường thẳng \( b \) cách tâm \( O \) một khoảng \( 7\,\text{cm} \). Hỏi \( b \) có thể là tiếp tuyến của \( (O; 7\,\text{cm}) \) không?</p>
+      
+      <h2>4. Đáp án</h2>
+      <p><strong>Câu 1:</strong> Vì \( d = 3 < R = 5 \) → đường thẳng cắt đường tròn tại 2 điểm.</p>
+      <p><strong>Câu 2:</strong> Vì \( d = R = 7 \) → \( b \) là tiếp tuyến của đường tròn.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_HH_Ch2_Bai4.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

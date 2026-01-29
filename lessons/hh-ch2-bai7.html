@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 7: Vị trí tương đối của hai đường tròn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📐 Toán 9 – Hình học</h1>
+    <p>Bài 7: Vị trí tương đối của hai đường tròn</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Các trường hợp</h2>
+      <p>Gọi hai đường tròn \( (O; R) \) và \( (O'; r) \) với \( R \ge r \), \( d = OO' \).</p>
+      
+      <table border="1" cellpadding="8" style="width:100%; margin:1rem 0; border-collapse:collapse;">
+        <tr><th>Vị trí</th><th>Điều kiện</th><th>Số điểm chung</th></tr>
+        <tr><td>Cắt nhau</td><td>\( R - r < d < R + r \)</td><td>2</td></tr>
+        <tr><td>Tiếp xúc ngoài</td><td>\( d = R + r \)</td><td>1</td></tr>
+        <tr><td>Tiếp xúc trong</td><td>\( d = R - r > 0 \)</td><td>1</td></tr>
+        <tr><td>Đựng nhau</td><td>\( d < R - r \)</td><td>0</td></tr>
+        <tr><td>Ở ngoài nhau</td><td>\( d > R + r \)</td><td>0</td></tr>
+        <tr><td>Đồng tâm</td><td>\( d = 0 \)</td><td>0 (hoặc vô số nếu \( R = r \))</td></tr>
+      </table>
+      
+      <h2>2. Tính chất đường nối tâm</h2>
+      <p>Đường nối tâm \( OO' \) là trục đối xứng của hình gồm hai đường tròn.<br>
+         Nếu hai đường tròn cắt nhau thì \( OO' \) là đường trung trực của dây chung.</p>
+      
+      <h2>3. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Hai đường tròn có bán kính \( 5\,\text{cm} \) và \( 3\,\text{cm} \). Khoảng cách giữa hai tâm là \( 7\,\text{cm} \). Xác định vị trí tương đối.</p>
+      
+      <h2>4. Đáp án</h2>
+      <p>Ta có: \( R + r = 8 \), \( R - r = 2 \).<br>
+         Vì \( 2 < 7 < 8 \) → hai đường tròn <strong>cắt nhau</strong>.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_HH_Ch2_Bai7.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

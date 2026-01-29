@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 1: Hệ thức lượng trong tam giác vuông</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📐 Toán 9 – Hình học</h1>
+    <p>Bài 1: Một số hệ thức về cạnh và đường cao trong tam giác vuông</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Thiết lập</h2>
+      <p>Xét tam giác \( ABC \) vuông tại \( A \), đường cao \( AH \) hạ từ \( A \) xuống cạnh huyền \( BC \).<br>
+         Ký hiệu:</p>
+      <ul>
+        <li>\( BC = a \) (cạnh huyền)</li>
+        <li>\( AB = c \), \( AC = b \)</li>
+        <li>\( BH = c' \), \( CH = b' \)</li>
+        <li>\( AH = h \)</li>
+      </ul>
+      
+      <h2>2. Các hệ thức cơ bản</h2>
+      <ol>
+        <li><strong>Hệ thức 1:</strong> \( b^2 = a \cdot b' \), \( c^2 = a \cdot c' \)</li>
+        <li><strong>Hệ thức 2:</strong> \( h^2 = b' \cdot c' \)</li>
+        <li><strong>Hệ thức 3:</strong> \( a \cdot h = b \cdot c \)</li>
+        <li><strong>Hệ thức 4:</strong> \( \dfrac{1}{h^2} = \dfrac{1}{b^2} + \dfrac{1}{c^2} \)</li>
+      </ol>
+      
+      <h2>3. Ví dụ minh họa</h2>
+      <p><strong>Ví dụ:</strong> Cho tam giác \( ABC \) vuông tại \( A \), biết \( AB = 6 \, \text{cm} \), \( AC = 8 \, \text{cm} \). Tính độ dài đường cao \( AH \).</p>
+      <p><strong>Giải:</strong><br>
+         Ta có: \( BC = \sqrt{AB^2 + AC^2} = \sqrt{6^2 + 8^2} = \sqrt{100} = 10 \, \text{cm} \).<br>
+         Áp dụng hệ thức 3: \( BC \cdot AH = AB \cdot AC \)<br>
+         \( \Rightarrow 10 \cdot AH = 6 \cdot 8 = 48 \)<br>
+         \( \Rightarrow AH = \dfrac{48}{10} = 4.8 \, \text{cm} \).</p>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Trong tam giác vuông, cạnh huyền bằng \( 13 \, \text{cm} \), một cạnh góc vuông bằng \( 5 \, \text{cm} \). Tính:<br>
+         a) Cạnh góc vuông còn lại<br>
+         b) Đường cao ứng với cạnh huyền</p>
+      
+      <h2>5. Đáp án</h2>
+      <p><strong>Câu 1:</strong><br>
+         a) Gọi cạnh cần tìm là \( x \): \( x^2 + 5^2 = 13^2 \Rightarrow x^2 = 169 - 25 = 144 \Rightarrow x = 12 \, \text{cm} \)<br>
+         b) Gọi đường cao là \( h \): \( 13 \cdot h = 5 \cdot 12 = 60 \Rightarrow h = \dfrac{60}{13} \approx 4.62 \, \text{cm} \)</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_HH_Ch1_Bai1.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

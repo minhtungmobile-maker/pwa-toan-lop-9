@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 5: Hệ thức Vi-ét và ứng dụng</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Toán 9 – Đại số</h1>
+    <p>Bài 5: Hệ thức Vi-ét và ứng dụng</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Định lý Vi-ét</h2>
+      <p>Nếu \( x_1, x_2 \) là hai nghiệm của phương trình \( ax^2 + bx + c = 0 \) (\( a \ne 0 \)), thì:
+        \[
+        x_1 + x_2 = -\frac{b}{a}, \quad x_1 x_2 = \frac{c}{a}
+        \]
+      </p>
+      
+      <h2>2. Ứng dụng</h2>
+      <p><strong>a) Nhẩm nghiệm:</strong><br>
+         • Nếu \( a + b + c = 0 \) → nghiệm \( x_1 = 1, x_2 = \dfrac{c}{a} \)<br>
+         • Nếu \( a - b + c = 0 \) → nghiệm \( x_1 = -1, x_2 = -\dfrac{c}{a} \)</p>
+      
+      <p><strong>b) Tìm hai số biết tổng và tích:</strong><br>
+         Hai số \( u, v \) là nghiệm của phương trình \( x^2 - Sx + P = 0 \), với \( S = u+v, P = uv \).</p>
+      
+      <h2>3. Ví dụ</h2>
+      <p>Phương trình \( x^2 - 7x + 10 = 0 \) có \( a + b + c = 1 - 7 + 10 = 4 \ne 0 \), nhưng dễ thấy nghiệm \( x_1 = 2, x_2 = 5 \) vì \( 2+5=7, 2\cdot5=10 \).</p>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Không giải phương trình, hãy tính tổng và tích hai nghiệm của \( 2x^2 - 5x + 3 = 0 \).</p>
+      
+      <p><strong>Câu 2:</strong> Tìm hai số có tổng bằng 8 và tích bằng 15.</p>
+      
+      <h2>5. Đáp án</h2>
+      <p><strong>Câu 1:</strong><br>
+         \( S = x_1 + x_2 = \dfrac{5}{2} \), \( P = x_1 x_2 = \dfrac{3}{2} \)</p>
+      
+      <p><strong>Câu 2:</strong><br>
+         Phương trình: \( x^2 - 8x + 15 = 0 \)<br>
+         → \( \Delta = 64 - 60 = 4 \) → \( x = 3 \) hoặc \( x = 5 \)<br>
+         → Hai số là 3 và 5.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_Ch4_Bai5.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

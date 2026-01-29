@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 3: Đồ thị của hàm số y = ax + b</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Toán 9 – Đại số</h1>
+    <p>Bài 3: Đồ thị của hàm số \( y = ax + b \)</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Đồ thị hàm số bậc nhất</h2>
+      <p>Đồ thị của hàm số \( y = ax + b \) (\( a \ne 0 \)) là một <strong>đường thẳng</strong>:<br>
+         • Cắt trục tung tại điểm \( (0; b) \)<br>
+         • Song song với đường thẳng \( y = ax \) nếu \( b \ne 0 \), trùng nếu \( b = 0 \)</p>
+      
+      <h2>2. Cách vẽ đồ thị</h2>
+      <p>Bước 1: Cho \( x = 0 \Rightarrow y = b \) → điểm \( A(0; b) \)<br>
+         Bước 2: Cho \( y = 0 \Rightarrow x = -\dfrac{b}{a} \) → điểm \( B\left(-\dfrac{b}{a}; 0\right) \)<br>
+         Bước 3: Vẽ đường thẳng qua A và B.</p>
+      
+      <h2>3. Ví dụ</h2>
+      <p>Vẽ đồ thị hàm số \( y = 2x - 4 \):<br>
+         • Khi \( x = 0 \), \( y = -4 \) → \( A(0; -4) \)<br>
+         • Khi \( y = 0 \), \( 2x - 4 = 0 \Rightarrow x = 2 \) → \( B(2; 0) \)<br>
+         → Vẽ đường thẳng qua A và B.</p>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Vẽ đồ thị hàm số \( y = -x + 3 \).</p>
+      
+      <p><strong>Câu 2:</strong> Tìm tọa độ giao điểm của đồ thị \( y = 2x + 1 \) và trục hoành.</p>
+      
+      <h2>5. Đáp án</h2>
+      <p><strong>Câu 1:</strong><br>
+         Giao trục tung: \( (0; 3) \)<br>
+         Giao trục hoành: \( (-3; 0) \)</p>
+      
+      <p><strong>Câu 2:</strong><br>
+         Trục hoành: \( y = 0 \Rightarrow 2x + 1 = 0 \Rightarrow x = -\dfrac{1}{2} \)<br>
+         → Giao điểm: \( \left(-\dfrac{1}{2}; 0\right) \)</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_Ch2_Bai3.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

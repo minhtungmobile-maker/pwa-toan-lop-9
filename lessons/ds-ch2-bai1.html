@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 1: Nhắc lại và bổ sung các khái niệm về hàm số</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Toán 9 – Đại số</h1>
+    <p>Bài 1: Nhắc lại và bổ sung các khái niệm về hàm số</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Khái niệm hàm số</h2>
+      <p>Nếu đại lượng \( y \) phụ thuộc vào đại lượng thay đổi \( x \) sao cho với mỗi giá trị của \( x \), ta luôn xác định được chỉ một giá trị tương ứng của \( y \), thì \( y \) được gọi là <strong>hàm số</strong> của \( x \), và \( x \) được gọi là <strong>biến số</strong>.</p>
+      
+      <h2>2. Giá trị của hàm số</h2>
+      <p>Khi \( x = x_0 \), giá trị tương ứng của hàm số \( y = f(x) \) là \( f(x_0) \).</p>
+      
+      <p><strong>Ví dụ:</strong> Cho hàm số \( y = f(x) = 2x + 1 \).<br>
+         Khi \( x = 3 \), ta có \( f(3) = 2 \cdot 3 + 1 = 7 \).</p>
+      
+      <h2>3. Đồ thị của hàm số</h2>
+      <p>Đồ thị của hàm số \( y = f(x) \) là tập hợp tất cả các điểm \( (x; f(x)) \) trên mặt phẳng tọa độ.</p>
+      
+      <h2>4. Hàm số đồng biến, nghịch biến</h2>
+      <p>• <strong>Đồng biến</strong>: Nếu \( x_1 < x_2 \) mà \( f(x_1) < f(x_2) \)<br>
+         • <strong>Nghịch biến</strong>: Nếu \( x_1 < x_2 \) mà \( f(x_1) > f(x_2) \)</p>
+      
+      <h2>5. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Cho hàm số \( y = f(x) = 3x - 2 \). Tính \( f(0), f(1), f(-1) \).</p>
+      
+      <p><strong>Câu 2:</strong> Hàm số \( y = -2x + 5 \) đồng biến hay nghịch biến? Vì sao?</p>
+      
+      <h2>6. Đáp án</h2>
+      <p><strong>Câu 1:</strong><br>
+         \( f(0) = -2 \), \( f(1) = 1 \), \( f(-1) = -5 \)</p>
+      
+      <p><strong>Câu 2:</strong><br>
+         Vì hệ số \( a = -2 < 0 \) nên hàm số nghịch biến trên \( \mathbb{R} \).</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_Ch2_Bai1.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

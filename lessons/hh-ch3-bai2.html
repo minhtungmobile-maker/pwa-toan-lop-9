@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 2: Liên hệ giữa cung và dây</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📐 Toán 9 – Hình học</h1>
+    <p>Bài 2: Liên hệ giữa cung và dây</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Định lý</h2>
+      <p>Trong một đường tròn hoặc hai đường tròn bằng nhau:</p>
+      <ul>
+        <li>Hai cung bằng nhau căng hai dây bằng nhau.</li>
+        <li>Hai dây bằng nhau căng hai cung bằng nhau.</li>
+        <li>Cung lớn hơn căng dây lớn hơn.</li>
+        <li>Dây lớn hơn căng cung lớn hơn.</li>
+      </ul>
+      
+      <h2>2. Lưu ý</h2>
+      <p>Định lý chỉ đúng khi xét các cung nhỏ hoặc các cung lớn trong cùng một đường tròn.</p>
+      
+      <h2>3. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Trong đường tròn \( (O) \), dây \( AB > CD \). So sánh số đo cung \( AB \) và cung \( CD \).</p>
+      
+      <h2>4. Đáp án</h2>
+      <p>Vì \( AB > CD \) nên cung \( AB \) > cung \( CD \) (cùng là cung nhỏ).</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_HH_Ch3_Bai2.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 3: Liên hệ giữa phép nhân và phép khai phương</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Toán 9 – Đại số</h1>
+    <p>Bài 3: Liên hệ giữa phép nhân và phép khai phương</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Định lý</h2>
+      <p>Với hai số \( a \ge 0 \) và \( b \ge 0 \), ta có:
+        \[
+        \sqrt{a \cdot b} = \sqrt{a} \cdot \sqrt{b}
+        \]
+      </p>
+      
+      <h2>2. Áp dụng</h2>
+      <p><strong>a) Quy tắc khai phương một tích</strong><br>
+         Muốn khai phương một tích của các số không âm, ta có thể khai phương từng thừa số rồi nhân các kết quả lại.</p>
+      
+      <p><strong>b) Quy tắc nhân các căn bậc hai</strong><br>
+         Muốn nhân các căn bậc hai của các số không âm, ta có thể nhân các số dưới dấu căn với nhau rồi khai phương kết quả đó.</p>
+      
+      <h2>3. Ví dụ</h2>
+      <p><strong>Ví dụ 1:</strong> Tính \( \sqrt{16 \cdot 25} \).<br>
+         Giải: \( \sqrt{16 \cdot 25} = \sqrt{16} \cdot \sqrt{25} = 4 \cdot 5 = 20 \).</p>
+      
+      <p><strong>Ví dụ 2:</strong> Rút gọn \( \sqrt{3} \cdot \sqrt{12} \).<br>
+         Giải: \( \sqrt{3} \cdot \sqrt{12} = \sqrt{3 \cdot 12} = \sqrt{36} = 6 \).</p>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Tính:<br>
+         a) \( \sqrt{9 \cdot 49} \)<br>
+         b) \( \sqrt{0.04 \cdot 81} \)</p>
+      
+      <p><strong>Câu 2:</strong> Rút gọn biểu thức:<br>
+         a) \( \sqrt{5} \cdot \sqrt{20} \)<br>
+         b) \( \sqrt{2a} \cdot \sqrt{8a} \) (với \( a \ge 0 \))</p>
+      
+      <h2>5. Đáp án</h2>
+      <p><strong>Câu 1:</strong><br>
+         a) \( \sqrt{9} \cdot \sqrt{49} = 3 \cdot 7 = 21 \)<br>
+         b) \( \sqrt{0.04} \cdot \sqrt{81} = 0.2 \cdot 9 = 1.8 \)</p>
+      
+      <p><strong>Câu 2:</strong><br>
+         a) \( \sqrt{5 \cdot 20} = \sqrt{100} = 10 \)<br>
+         b) \( \sqrt{2a \cdot 8a} = \sqrt{16a^2} = 4a \) (vì \( a \ge 0 \))</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_Bai3.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

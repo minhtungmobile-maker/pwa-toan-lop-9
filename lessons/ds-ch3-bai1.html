@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 1: Phương trình bậc nhất hai ẩn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Toán 9 – Đại số</h1>
+    <p>Bài 1: Phương trình bậc nhất hai ẩn</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Định nghĩa</h2>
+      <p>Phương trình bậc nhất hai ẩn \( x \) và \( y \) là hệ thức dạng:
+        \[
+        ax + by = c
+        \]
+        trong đó \( a, b, c \) là các số đã biết (\( a \ne 0 \) hoặc \( b \ne 0 \)).</p>
+      
+      <h2>2. Nghiệm của phương trình</h2>
+      <p>Cặp số \( (x_0; y_0) \) là nghiệm nếu khi thay vào phương trình ta được đẳng thức đúng.</p>
+      <p><strong>Ví dụ:</strong> \( (1; 2) \) là nghiệm của \( 2x + y = 4 \) vì \( 2 \cdot 1 + 2 = 4 \).</p>
+      
+      <h2>3. Tập nghiệm</h2>
+      <p>Phương trình \( ax + by = c \) luôn có vô số nghiệm. Tập nghiệm được biểu diễn bởi đường thẳng \( ax + by = c \) trên mặt phẳng tọa độ.</p>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Trong các cặp số sau, cặp nào là nghiệm của phương trình \( 3x - y = 5 \)?<br>
+         a) \( (2; 1) \)<br>
+         b) \( (0; -5) \)</p>
+      
+      <p><strong>Câu 2:</strong> Biểu diễn tập nghiệm của phương trình \( x + 2y = 4 \) trên mặt phẳng tọa độ.</p>
+      
+      <h2>5. Đáp án</h2>
+      <p><strong>Câu 1:</strong><br>
+         a) \( 3 \cdot 2 - 1 = 5 \) → đúng → là nghiệm<br>
+         b) \( 3 \cdot 0 - (-5) = 5 \) → đúng → là nghiệm</p>
+      
+      <p><strong>Câu 2:</strong><br>
+         Cho \( x = 0 \Rightarrow y = 2 \) → điểm \( (0; 2) \)<br>
+         Cho \( y = 0 \Rightarrow x = 4 \) → điểm \( (4; 0) \)<br>
+         → Vẽ đường thẳng qua hai điểm này.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_Ch3_Bai1.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

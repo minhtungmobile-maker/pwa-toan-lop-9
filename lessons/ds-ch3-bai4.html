@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 4: Giải hệ phương trình bằng phương pháp cộng đại số</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Toán 9 – Đại số</h1>
+    <p>Bài 4: Giải hệ phương trình bằng phương pháp cộng đại số</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Quy tắc cộng đại số</h2>
+      <p><strong>Bước 1:</strong> Làm cho hệ số của một ẩn trong hai phương trình bằng nhau hoặc đối nhau.<br>
+         <strong>Bước 2:</strong> Cộng (hoặc trừ) vế theo vế để khử ẩn đó.<br>
+         <strong>Bước 3:</strong> Giải phương trình một ẩn, rồi suy ra ẩn còn lại.</p>
+      
+      <h2>2. Ví dụ</h2>
+      <p>Giải hệ:
+        \[
+        \begin{cases}
+          2x + 3y = 8 \\
+          2x - y = 0
+        \end{cases}
+        \]
+        Trừ vế theo vế: \( (2x + 3y) - (2x - y) = 8 - 0 \Rightarrow 4y = 8 \Rightarrow y = 2 \).<br>
+        Thế vào PT2: \( 2x - 2 = 0 \Rightarrow x = 1 \).<br>
+        → Nghiệm: \( (1; 2) \).</p>
+      
+      <h2>3. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Giải hệ:
+        \[
+        \begin{cases}
+          3x + 2y = 12 \\
+          2x - y = 1
+        \end{cases}
+        \]</p>
+      
+      <h2>4. Đáp án</h2>
+      <p>Nhân PT2 với 2: \( 4x - 2y = 2 \).<br>
+         Cộng với PT1: \( (3x + 2y) + (4x - 2y) = 12 + 2 \Rightarrow 7x = 14 \Rightarrow x = 2 \).<br>
+         Thế vào PT2: \( 2 \cdot 2 - y = 1 \Rightarrow y = 3 \).<br>
+         → Nghiệm: \( (2; 3) \).</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_Ch3_Bai4.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

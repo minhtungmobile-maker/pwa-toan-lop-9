@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 5: Góc có đỉnh ở bên trong/bên ngoài đường tròn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📐 Toán 9 – Hình học</h1>
+    <p>Bài 5: Góc có đỉnh ở bên trong/bên ngoài đường tròn</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Góc có đỉnh ở bên trong đường tròn</h2>
+      <p>Số đo bằng <strong>nửa tổng số đo hai cung bị chắn</strong>.</p>
+      <p>\[
+        \widehat{BEC} = \dfrac{1}{2} \left( sđ\overset{\frown}{BC} + sđ\overset{\frown}{AD} \right)
+      \]</p>
+      
+      <h2>2. Góc có đỉnh ở bên ngoài đường tròn</h2>
+      <p>Số đo bằng <strong>nửa hiệu số đo hai cung bị chắn</strong>.</p>
+      <p>\[
+        \widehat{BEC} = \dfrac{1}{2} \left| sđ\overset{\frown}{BC} - sđ\overset{\frown}{AD} \right|
+      \]</p>
+      
+      <h2>3. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Góc có đỉnh trong đường tròn chắn hai cung \( 80^\circ \) và \( 40^\circ \). Tính số đo góc.</p>
+      
+      <h2>4. Đáp án</h2>
+      <p>\( \dfrac{1}{2}(80^\circ + 40^\circ) = 60^\circ \).</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_HH_Ch3_Bai5.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

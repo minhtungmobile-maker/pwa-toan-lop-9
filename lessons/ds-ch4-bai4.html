@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 4: Công thức nghiệm của phương trình bậc hai</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Toán 9 – Đại số</h1>
+    <p>Bài 4: Công thức nghiệm của phương trình bậc hai</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Biệt thức Δ</h2>
+      <p>Cho phương trình \( ax^2 + bx + c = 0 \) (\( a \ne 0 \)).<br>
+         Tính: \( \Delta = b^2 - 4ac \)</p>
+      
+      <h2>2. Công thức nghiệm</h2>
+      <ul>
+        <li>Nếu \( \Delta > 0 \): phương trình có hai nghiệm phân biệt:
+          \[
+          x_1 = \frac{-b + \sqrt{\Delta}}{2a}, \quad x_2 = \frac{-b - \sqrt{\Delta}}{2a}
+          \]
+        </li>
+        <li>Nếu \( \Delta = 0 \): phương trình có nghiệm kép:
+          \[
+          x_1 = x_2 = -\frac{b}{2a}
+          \]
+        </li>
+        <li>Nếu \( \Delta < 0 \): phương trình vô nghiệm.</li>
+      </ul>
+      
+      <h2>3. Ví dụ</h2>
+      <p>Giải \( x^2 - 5x + 6 = 0 \):<br>
+         \( \Delta = (-5)^2 - 4 \cdot 1 \cdot 6 = 25 - 24 = 1 > 0 \)<br>
+         → \( x_1 = \dfrac{5 + 1}{2} = 3 \), \( x_2 = \dfrac{5 - 1}{2} = 2 \)</p>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Giải phương trình \( 2x^2 - 4x + 2 = 0 \).</p>
+      
+      <h2>5. Đáp án</h2>
+      <p>\( \Delta = (-4)^2 - 4 \cdot 2 \cdot 2 = 16 - 16 = 0 \)<br>
+         → Nghiệm kép: \( x = \dfrac{4}{2 \cdot 2} = 1 \)</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_Ch4_Bai4.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

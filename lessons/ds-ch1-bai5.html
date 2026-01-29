@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 5: Biến đổi đơn giản biểu thức chứa căn bậc hai</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Toán 9 – Đại số</h1>
+    <p>Bài 5: Biến đổi đơn giản biểu thức chứa căn bậc hai</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Đưa thừa số ra ngoài dấu căn</h2>
+      <p>Với \( A \ge 0, B \ge 0 \), ta có:
+        \[
+        \sqrt{A^2 B} = A\sqrt{B}
+        \]
+      </p>
+      <p><strong>Ví dụ:</strong> \( \sqrt{18} = \sqrt{9 \cdot 2} = \sqrt{3^2 \cdot 2} = 3\sqrt{2} \).</p>
+      
+      <h2>2. Đưa thừa số vào trong dấu căn</h2>
+      <p>Với \( A \ge 0, B \ge 0 \):
+        \[
+        A\sqrt{B} = \sqrt{A^2 B}
+        \]
+      </p>
+      <p>Với \( A < 0, B \ge 0 \):
+        \[
+        A\sqrt{B} = -\sqrt{A^2 B}
+        \]
+      </p>
+      <p><strong>Ví dụ:</strong> \( 5\sqrt{3} = \sqrt{25 \cdot 3} = \sqrt{75} \).</p>
+      
+      <h2>3. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Đưa thừa số ra ngoài dấu căn:<br>
+         a) \( \sqrt{50} \)<br>
+         b) \( \sqrt{27} \)</p>
+      
+      <p><strong>Câu 2:</strong> Đưa thừa số vào trong dấu căn:<br>
+         a) \( 4\sqrt{5} \)<br>
+         b) \( -3\sqrt{2} \)</p>
+      
+      <h2>4. Đáp án</h2>
+      <p><strong>Câu 1:</strong><br>
+         a) \( \sqrt{25 \cdot 2} = 5\sqrt{2} \)<br>
+         b) \( \sqrt{9 \cdot 3} = 3\sqrt{3} \)</p>
+      
+      <p><strong>Câu 2:</strong><br>
+         a) \( \sqrt{16 \cdot 5} = \sqrt{80} \)<br>
+         b) \( -\sqrt{9 \cdot 2} = -\sqrt{18} \)</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_Bai5.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

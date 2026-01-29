@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 1: Góc ở tâm. Số đo cung</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📐 Toán 9 – Hình học</h1>
+    <p>Bài 1: Góc ở tâm. Số đo cung</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Góc ở tâm</h2>
+      <p>Góc có đỉnh trùng với tâm đường tròn gọi là <strong>góc ở tâm</strong>.</p>
+      
+      <h2>2. Số đo cung</h2>
+      <p>Số đo của cung nhỏ bằng số đo của góc ở tâm chắn cung ấy.<br>
+         Số đo cung lớn bằng \( 360^\circ \) trừ số đo cung nhỏ.<br>
+         Cung nửa đường tròn có số đo \( 180^\circ \).</p>
+      
+      <h2>3. Ký hiệu</h2>
+      <p>Cung \( AB \) được kí hiệu là \( \overset{\frown}{AB} \).<br>
+         Số đo cung \( AB \) là \( sđ\overset{\frown}{AB} \).</p>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Cho góc ở tâm \( \widehat{AOB} = 60^\circ \). Tính số đo cung nhỏ \( AB \) và cung lớn \( AB \).</p>
+      
+      <h2>5. Đáp án</h2>
+      <p>Cung nhỏ \( AB \): \( 60^\circ \)<br>
+         Cung lớn \( AB \): \( 360^\circ - 60^\circ = 300^\circ \)</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_HH_Ch3_Bai1.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

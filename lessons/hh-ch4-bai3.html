@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 3: Hình cầu</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📐 Toán 9 – Hình học</h1>
+    <p>Bài 3: Hình cầu. Diện tích mặt cầu và thể tích</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Hình cầu</h2>
+      <p>Khi quay nửa hình tròn tâm \( O \), bán kính \( R \) quanh đường kính \( AB \), ta được hình cầu.</p>
+      
+      <h2>2. Công thức</h2>
+      <p>Gọi \( R \): bán kính hình cầu.</p>
+      <ul>
+        <li>Diện tích mặt cầu: \( S = 4\pi R^2 \)</li>
+        <li>Thể tích: \( V = \dfrac{4}{3} \pi R^3 \)</li>
+      </ul>
+      
+      <h2>3. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Hình cầu có \( R = 6\,\text{cm} \). Tính \( S \) và \( V \).</p>
+      
+      <h2>4. Đáp án</h2>
+      <p>\( S = 4\pi \cdot 6^2 = 144\pi \approx 452.16\,\text{cm}^2 \)<br>
+         \( V = \dfrac{4}{3} \pi \cdot 6^3 = 288\pi \approx 904.32\,\text{cm}^3 \)</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_HH_Ch4_Bai3.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

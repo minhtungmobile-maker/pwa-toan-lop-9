@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 6: Rút gọn biểu thức chứa căn bậc hai</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Toán 9 – Đại số</h1>
+    <p>Bài 6: Rút gọn biểu thức chứa căn bậc hai</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Phương pháp</h2>
+      <p>Kết hợp các phép biến đổi:<br>
+         • Khai phương tích/thương<br>
+         • Đưa thừa số ra/vào dấu căn<br>
+         • Cộng, trừ, nhân, chia biểu thức chứa căn</p>
+      
+      <h2>2. Ví dụ</h2>
+      <p><strong>Ví dụ:</strong> Rút gọn \( A = \sqrt{48} - \sqrt{27} + \sqrt{12} \).<br>
+         Giải:<br>
+         \( A = \sqrt{16 \cdot 3} - \sqrt{9 \cdot 3} + \sqrt{4 \cdot 3} = 4\sqrt{3} - 3\sqrt{3} + 2\sqrt{3} = 3\sqrt{3} \).</p>
+      
+      <h2>3. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Rút gọn:<br>
+         a) \( \sqrt{20} + \sqrt{45} - \sqrt{80} \)<br>
+         b) \( 2\sqrt{50} - 3\sqrt{18} + \sqrt{8} \)</p>
+      
+      <h2>4. Đáp án</h2>
+      <p><strong>Câu 1:</strong><br>
+         a) \( 2\sqrt{5} + 3\sqrt{5} - 4\sqrt{5} = \sqrt{5} \)<br>
+         b) \( 2 \cdot 5\sqrt{2} - 3 \cdot 3\sqrt{2} + 2\sqrt{2} = 10\sqrt{2} - 9\sqrt{2} + 2\sqrt{2} = 3\sqrt{2} \)</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_Bai6.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

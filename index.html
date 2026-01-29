@@ -1,10 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Ứng dụng học Toán 9 chuẩn SGK – hỗ trợ ôn tập hiệu quả">
-  <title>Toán 9 – Học Theo Dạng</title>
+  <meta name="description" content="?ng d?ng h?c To�n 9 theo d?ng � c�ng th?c � m?o. Mi?n ph�, kh�ng qu?ng c�o.">
+  <title>To�n L?p 9</title>
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json">
@@ -16,7 +16,6 @@
     :root {
       --primary: #1976d2;
       --accent: #ff6f00;
-      --success: #4caf50;
       --light: #f5f9ff;
       --card: #ffffff;
       --text: #212121;
@@ -48,8 +47,7 @@
       top: 1rem;
       right: 1rem;
       background: none;
-      border: none;
-      color: white;
+      border: none;      color: white;
       font-size: 1.5rem;
       cursor: pointer;
     }
@@ -98,14 +96,12 @@
       padding: 1.2rem;
       border-radius: 12px;
       cursor: pointer;
-      transition: transform 0.2s;
-    }
+      transition: transform 0.2s;    }
     .topic-card:hover {
       transform: translateY(-3px);
       background: #bbdefb;
     }
 
-    /* Nút điều hướng */
     .nav-buttons {
       display: flex;
       gap: 1rem;
@@ -144,121 +140,118 @@
 </head>
 <body>
   <header>
-    <h1>📘 TOÁN LỚP 9</h1>
-    <button id="theme-toggle">🌙</button>
+    <h1>?? TO�N L?P 9</h1>
+    <button id="theme-toggle">??</button>
   </header>
 
   <nav class="tabs">
-    <button class="tab-btn active" data-tab="home">Trang chủ</button>
-    <button class="tab-btn" data-tab="learn">Học theo bài</button>
-    <button class="tab-btn" data-tab="practice">Luyện đề</button>
-    <button class="tab-btn" data-tab="progress">Tiến bộ</button>
-    <button class="tab-btn" data-tab="contact">Phụ huynh</button>
+    <button class="tab-btn active" data-tab="home">Trang ch?</button>    <button class="tab-btn" data-tab="learn">H?c theo b�i</button>
+    <button class="tab-btn" data-tab="practice">Luy?n d?</button>
+    <button class="tab-btn" data-tab="progress">Ti?n b?</button>
+    <button class="tab-btn" data-tab="contact">Ph? huynh</button>
   </nav>
 
-  <!-- TRANG CHỦ -->
+  <!-- TRANG CH? -->
   <section id="home" class="section active">
     <div class="card">
-      <h2>🌟 HỌC TOÁN 9 THEO DẠNG – CÔNG THỨC – MẸO</h2>
-      <p>Ứng dụng này giúp bạn:</p>
+      <h2>?? H?C TO�N 9 THEO D?NG � C�NG TH?C � M?O</h2>
+      <p>?ng d?ng n�y gi�p b?n:</p>
       <ul style="margin:1rem 0;padding-left:1.5rem;">
-        <li>✅ Học từng dạng toán cụ thể</li>
-        <li>✅ Nắm công thức tối thiểu</li>
-        <li>✅ Làm bài ngay sau lý thuyết</li>
-        <li>✅ Ôn tập theo đề thi thật</li>
+        <li>? H?c t?ng d?ng to�n c? th?</li>
+        <li>? N?m c�ng th?c t?i thi?u</li>
+        <li>? L�m b�i ngay sau l� thuy?t</li>
+        <li>? �n t?p theo d? thi th?t</li>
       </ul>
-      <button onclick="showSection('learn')" style="background:#1976d2;color:white;border:none;padding:0.6rem 1.2rem;border-radius:8px;margin-top:1rem;">➡️ BẮT ĐẦU HỌC</button>
+      <button onclick="showSection('learn')" style="background:#1976d2;color:white;border:none;padding:0.6rem 1.2rem;border-radius:8px;margin-top:1rem;">?? B?T �?U H?C</button>
     </div>
   </section>
 
-  <!-- HỌC THEO BÀI -->
+  <!-- H?C THEO B�I -->
   <section id="learn" class="section">
     <div class="card">
-      <h2>📚 HỌC THEO DẠNG TOÁN</h2>
+      <h2>?? H?C THEO D?NG TO�N</h2>
       <div class="topic-grid">
         <div class="topic-card" onclick="window.location='lessons/ds-ch1-bai1.html'">
-          <h3>🔢 Căn bậc hai</h3>
-          <p>Công thức + ví dụ + làm ngay</p>
+          <h3>?? Can b?c hai</h3>
+          <p>C�ng th?c + v� d? + l�m ngay</p>
         </div>
         <div class="topic-card" onclick="window.location='lessons/hh-ch1-bai1.html'">
-          <h3>📐 Hệ thức lượng</h3>
-          <p>5 hệ thức + mẹo nhớ</p>
+          <h3>?? H? th?c lu?ng</h3>
+          <p>5 h? th?c + m?o nh?</p>
         </div>
         <div class="topic-card" onclick="window.location='lessons/ds-ch2-bai1.html'">
-          <h3>📈 Hàm số bậc nhất</h3>
-          <p>Đồ thị + ứng dụng</p>
+          <h3>?? H�m s? b?c nh?t</h3>
+          <p>�? th? + ?ng d?ng</p>
         </div>
         <div class="topic-card" onclick="window.location='lessons/ds-ch3-bai1.html'">
-          <h3>🧮 Hệ phương trình</h3>
-          <p>Thế + cộng đại số</p>
+          <h3>?? H? phuong tr�nh</h3>
+          <p>Th? + c?ng d?i s?</p>
         </div>
         <div class="topic-card" onclick="window.location='lessons/ds-ch4-bai1.html'">
-          <h3>📉 Hàm số y = ax²</h3>
-          <p>Parabol + đỉnh</p>
+          <h3>?? H�m s? y = ax�</h3>
+          <p>Parabol + d?nh</p>
         </div>
         <div class="topic-card" onclick="window.location='lessons/hh-ch2-bai1.html'">
-          <h3>⭕ Đường tròn</h3>
-          <p>Tâm – bán kính – tiếp tuyến</p>
-        </div>
-      </div>
+          <h3>? �u?ng tr�n</h3>
+          <p>T�m � b�n k�nh � ti?p tuy?n</p>
+        </div>      </div>
       <div class="nav-buttons">
-        <a href="#" class="nav-btn" onclick="history.back()">← Quay lại trang trước</a>
-        <a href="./" class="nav-btn">🏠 Về trang chủ</a>
+        <a href="#" class="nav-btn" onclick="history.back()">? Quay l?i trang tru?c</a>
+        <a href="./" class="nav-btn">?? V? trang ch?</a>
       </div>
     </div>
   </section>
 
-  <!-- LUYỆN ĐỀ -->
+  <!-- LUY?N �? -->
   <section id="practice" class="section">
     <div class="card">
-      <h2>📝 LUYỆN ĐỀ THI THẬT</h2>
+      <h2>?? LUY?N �? THI TH?T</h2>
       <ul style="list-style:none;padding:0;">
-        <li style="margin:0.5rem 0;"><a href="exercises/de-on-thi-vao-10-mau-1.html">Mẫu 1 – Hà Nội</a></li>
-        <li style="margin:0.5rem 0;"><a href="exercises/de-on-thi-vao-10-mau-2.html">Mẫu 2 – TP.HCM</a></li>
-        <li style="margin:0.5rem 0;"><a href="exercises/de-on-thi-vao-10-de-3.html">Đề 3 – Tổng hợp</a></li>
-        <li style="margin:0.5rem 0;"><a href="exercises/de-kiem-tra-15p-ch1.html">Kiểm tra 15 phút – Chương I</a></li>
-        <li style="margin:0.5rem 0;"><a href="exercises/de-kiem-tra-1-tiet-ch1.html">Kiểm tra 1 tiết – Chương I</a></li>
+        <li style="margin:0.5rem 0;"><a href="exercises/de-on-thi-vao-10-mau-1.html">M?u 1 � H� N?i</a></li>
+        <li style="margin:0.5rem 0;"><a href="exercises/de-on-thi-vao-10-mau-2.html">M?u 2 � TP.HCM</a></li>
+        <li style="margin:0.5rem 0;"><a href="exercises/de-on-thi-vao-10-de-3.html">�? 3 � T?ng h?p</a></li>
+        <li style="margin:0.5rem 0;"><a href="exercises/de-kiem-tra-15p-ch1.html">Ki?m tra 15 ph�t � Chuong I</a></li>
+        <li style="margin:0.5rem 0;"><a href="exercises/de-kiem-tra-1-tiet-ch1.html">Ki?m tra 1 ti?t � Chuong I</a></li>
       </ul>
       <div class="nav-buttons">
-        <a href="#" class="nav-btn" onclick="history.back()">← Quay lại trang trước</a>
-        <a href="./" class="nav-btn">🏠 Về trang chủ</a>
+        <a href="#" class="nav-btn" onclick="history.back()">? Quay l?i trang tru?c</a>
+        <a href="./" class="nav-btn">?? V? trang ch?</a>
       </div>
     </div>
   </section>
 
-  <!-- TIẾN BỘ -->
+  <!-- TI?N B? -->
   <section id="progress" class="section">
     <div class="card">
-      <h2>📈 TIẾN BỘ HỌC TẬP</h2>
-      <p>✅ Đã học: <strong id="lesson-count">0</strong> bài</p>
-      <p>✅ Đã làm: <strong id="exercise-count">0</strong> đề</p>
+      <h2>?? TI?N B? H?C T?P</h2>
+      <p>? �� h?c: <strong id="lesson-count">0</strong> b�i</p>
+      <p>? �� l�m: <strong id="exercise-count">0</strong> d?</p>
       <div class="nav-buttons">
-        <a href="#" class="nav-btn" onclick="history.back()">← Quay lại trang trước</a>
-        <a href="./" class="nav-btn">🏠 Về trang chủ</a>
+        <a href="#" class="nav-btn" onclick="history.back()">? Quay l?i trang tru?c</a>
+        <a href="./" class="nav-btn">?? V? trang ch?</a>
       </div>
     </div>
   </section>
 
-  <!-- PHỤ HUYNH -->
+  <!-- PH? HUYNH -->
   <section id="contact" class="section">
     <div class="card">
-      <h2>📞 GỬI PHỤ HUYNH</h2>
-      <p>Ứng dụng này hoàn toàn <strong>miễn phí</strong>, không quảng cáo, không thu thập dữ liệu.</p>
-      <p>Nếu thấy con học được, xin hãy:</p>
+      <h2>?? G?I PH? HUYNH</h2>
+      <p>?ng d?ng n�y ho�n to�n <strong>mi?n ph�</strong>, kh�ng qu?ng c�o, kh�ng thu th?p d? li?u.</p>
+      <p>N?u th?y con h?c du?c, xin h�y:</p>
       <ul style="margin:1rem 0;padding-left:1.5rem;">
-        <li>👉 Khuyến khích con tiếp tục</li>
-        <li>👉 Chia sẻ với gia đình khác</li>
-        <li>👉 Cài app để dùng offline</li>
-      </ul>
-      <div class="nav-buttons">
-        <a href="#" class="nav-btn" onclick="history.back()">← Quay lại trang trước</a>
-        <a href="./" class="nav-btn">🏠 Về trang chủ</a>
+        <li>?? Khuy?n kh�ch con ti?p t?c</li>
+        <li>?? Chia s? v?i gia d�nh kh�c</li>
+        <li>?? C�i app d? d�ng offline</li>
+      </ul>      <div class="nav-buttons">
+        <a href="#" class="nav-btn" onclick="history.back()">? Quay l?i trang tru?c</a>
+        <a href="./" class="nav-btn">?? V? trang ch?</a>
       </div>
     </div>
   </section>
 
   <footer>
-    <p>© 2026 | HSTAI 777 – Hỗ trợ học sinh Việt Nam</p>
+    <p>� 2026 | HSTAI 777 � H? tr? h?c sinh Vi?t Nam</p>
   </footer>
 
   <script>
@@ -268,13 +261,13 @@
                    (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
     if (isDark) {
       document.body.classList.add('dark-mode');
-      toggle.textContent = '☀️';
+      toggle.textContent = '??';
     }
     toggle.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
       const now = document.body.classList.contains('dark-mode');
       localStorage.setItem('theme', now ? 'dark' : 'light');
-      toggle.textContent = now ? '☀️' : '🌙';
+      toggle.textContent = now ? '??' : '??';
     });
 
     // Tab switching
@@ -282,7 +275,7 @@
       document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
       document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
       document.getElementById(id).classList.add('active');
-      const btn = document.querySelector(`[data-tab="${id}"]`);
+      const btn = document.querySelector([data-tab="${id}"]);
       if (btn) btn.classList.add('active');
     }
 
@@ -293,12 +286,12 @@
       });
     });
 
-    // Service Worker
+    // Service Worker registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js');
+        navigator.serviceWorker.register('./service-worker.js')
+          .catch(err => console.log('SW failed:', err));
       });
-    }
-  </script>
+    }  </script>
 </body>
 </html>

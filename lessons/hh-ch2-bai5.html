@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 5: Dấu hiệu nhận biết tiếp tuyến</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📐 Toán 9 – Hình học</h1>
+    <p>Bài 5: Dấu hiệu nhận biết tiếp tuyến của đường tròn</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Định lý</h2>
+      <p>Nếu một đường thẳng đi qua một điểm của đường tròn và vuông góc với bán kính đi qua điểm đó thì đường thẳng ấy là một tiếp tuyến của đường tròn.</p>
+      
+      <h2>2. Cách chứng minh tiếp tuyến</h2>
+      <p>Để chứng minh đường thẳng \( a \) là tiếp tuyến của \( (O) \) tại \( A \), ta chứng minh:<br>
+         • \( A \in (O) \)<br>
+         • \( a \perp OA \)</p>
+      
+      <h2>3. Ví dụ</h2>
+      <p>Cho tam giác \( ABC \) vuông tại \( A \), vẽ đường tròn \( (C; CA) \). Chứng minh \( AB \) là tiếp tuyến của đường tròn.</p>
+      <p><strong>Giải:</strong><br>
+         • \( A \in (C; CA) \) vì \( CA = \text{bán kính} \)<br>
+         • \( AB \perp AC \) (vì \( \widehat{A} = 90^\circ \))<br>
+         → \( AB \) là tiếp tuyến tại \( A \).</p>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Cho đường tròn \( (O; 4\,\text{cm}) \), điểm \( A \) trên đường tròn. Vẽ đường thẳng \( d \) qua \( A \) và vuông góc với \( OA \). Chứng minh \( d \) là tiếp tuyến.</p>
+      
+      <h2>5. Đáp án</h2>
+      <p>Theo định lý: \( d \) đi qua \( A \in (O) \) và \( d \perp OA \) → \( d \) là tiếp tuyến của \( (O) \) tại \( A \).</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_HH_Ch2_Bai5.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

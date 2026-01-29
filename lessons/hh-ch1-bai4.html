@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 4: Hệ thức về cạnh và góc trong tam giác vuông</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📐 Toán 9 – Hình học</h1>
+    <p>Bài 4: Một số hệ thức về cạnh và góc trong tam giác vuông</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Các hệ thức</h2>
+      <p>Trong tam giác \( ABC \) vuông tại \( A \):</p>
+      <ul>
+        <li>\( b = a \cdot \sin B = a \cdot \cos C \)</li>
+        <li>\( c = a \cdot \sin C = a \cdot \cos B \)</li>
+        <li>\( b = c \cdot \tan B = c \cdot \cot C \)</li>
+        <li>\( c = b \cdot \tan C = b \cdot \cot B \)</li>
+      </ul>
+      
+      <h2>2. Ứng dụng</h2>
+      <p>Dùng để giải tam giác vuông khi biết:<br>
+         • Một cạnh và một góc nhọn<br>
+         • Hai cạnh</p>
+      
+      <h2>3. Ví dụ</h2>
+      <p>Cho tam giác \( ABC \) vuông tại \( A \), \( BC = 10 \, \text{cm} \), \( \widehat{B} = 30^\circ \). Tính \( AB, AC \).</p>
+      <p><strong>Giải:</strong><br>
+         \( AB = BC \cdot \cos B = 10 \cdot \cos 30^\circ = 10 \cdot \dfrac{\sqrt{3}}{2} \approx 8.66 \, \text{cm} \)<br>
+         \( AC = BC \cdot \sin B = 10 \cdot \sin 30^\circ = 10 \cdot \dfrac{1}{2} = 5 \, \text{cm} \)</p>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Tam giác \( ABC \) vuông tại \( A \), \( AB = 6 \, \text{cm} \), \( \widehat{C} = 45^\circ \). Tính \( AC, BC \).</p>
+      
+      <h2>5. Đáp án</h2>
+      <p>Vì \( \widehat{C} = 45^\circ \) nên tam giác vuông cân → \( AC = AB = 6 \, \text{cm} \)<br>
+         \( BC = \sqrt{AB^2 + AC^2} = \sqrt{36 + 36} = \sqrt{72} = 6\sqrt{2} \approx 8.49 \, \text{cm} \)</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_HH_Ch1_Bai4.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

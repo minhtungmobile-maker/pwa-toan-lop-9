@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 2: Đường kính và dây của đường tròn</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📐 Toán 9 – Hình học</h1>
+    <p>Bài 2: Đường kính và dây của đường tròn</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. So sánh độ dài đường kính và dây</h2>
+      <p>Trong một đường tròn, đường kính là dây lớn nhất.</p>
+      
+      <h2>2. Quan hệ vuông góc giữa đường kính và dây</h2>
+      <p><strong>Định lý 1:</strong> Đường kính vuông góc với một dây thì đi qua trung điểm của dây ấy.</p>
+      <p><strong>Định lý 2:</strong> Đường kính đi qua trung điểm của một dây không đi qua tâm thì vuông góc với dây ấy.</p>
+      
+      <h2>3. Ví dụ</h2>
+      <p>Cho đường tròn \( (O) \), dây \( AB = 8 \, \text{cm} \), khoảng cách từ \( O \) đến \( AB \) là \( 3 \, \text{cm} \). Tính bán kính.</p>
+      <p><strong>Giải:</strong><br>
+         Gọi \( H \) là trung điểm \( AB \) → \( AH = 4 \, \text{cm} \), \( OH = 3 \, \text{cm} \).<br>
+         \( OA = \sqrt{OH^2 + AH^2} = \sqrt{9 + 16} = \sqrt{25} = 5 \, \text{cm} \).</p>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Dây \( CD = 10 \, \text{cm} \), khoảng cách từ tâm đến dây là \( 12 \, \text{cm} \). Tính bán kính.</p>
+      
+      <h2>5. Đáp án</h2>
+      <p>Gọi \( K \) là trung điểm \( CD \) → \( CK = 5 \, \text{cm} \), \( OK = 12 \, \text{cm} \).<br>
+         \( OC = \sqrt{5^2 + 12^2} = \sqrt{25 + 144} = \sqrt{169} = 13 \, \text{cm} \).</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_HH_Ch2_Bai2.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

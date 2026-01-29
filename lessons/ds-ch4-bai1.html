@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 1: Hàm số y = ax²</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Toán 9 – Đại số</h1>
+    <p>Bài 1: Hàm số \( y = ax^2 \) (\( a \ne 0 \))</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Định nghĩa</h2>
+      <p>Hàm số có dạng \( y = ax^2 \) (\( a \ne 0 \)) được gọi là <strong>hàm số bậc hai</strong>.</p>
+      
+      <h2>2. Tính chất</h2>
+      <ul>
+        <li>Nếu \( a > 0 \): hàm số <strong>nghịch biến</strong> khi \( x < 0 \), <strong>đồng biến</strong> khi \( x > 0 \). Giá trị nhỏ nhất là \( y = 0 \) tại \( x = 0 \).</li>
+        <li>Nếu \( a < 0 \): hàm số <strong>đồng biến</strong> khi \( x < 0 \), <strong>nghịch biến</strong> khi \( x > 0 \). Giá trị lớn nhất là \( y = 0 \) tại \( x = 0 \).</li>
+      </ul>
+      
+      <h2>3. Ví dụ</h2>
+      <p>Xét hàm số \( y = 2x^2 \):<br>
+         • Khi \( x = -1 \), \( y = 2 \)<br>
+         • Khi \( x = 0 \), \( y = 0 \)<br>
+         • Khi \( x = 2 \), \( y = 8 \)</p>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Cho hàm số \( y = -\dfrac{1}{2}x^2 \). Tính giá trị của \( y \) khi \( x = -2; 0; 4 \).</p>
+      
+      <p><strong>Câu 2:</strong> Hàm số \( y = 3x^2 \) đồng biến hay nghịch biến khi \( x > 0 \)?</p>
+      
+      <h2>5. Đáp án</h2>
+      <p><strong>Câu 1:</strong><br>
+         \( x = -2 \Rightarrow y = -\dfrac{1}{2} \cdot 4 = -2 \)<br>
+         \( x = 0 \Rightarrow y = 0 \)<br>
+         \( x = 4 \Rightarrow y = -\dfrac{1}{2} \cdot 16 = -8 \)</p>
+      
+      <p><strong>Câu 2:</strong><br>
+         Vì \( a = 3 > 0 \) nên hàm số đồng biến khi \( x > 0 \).</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_Ch4_Bai1.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

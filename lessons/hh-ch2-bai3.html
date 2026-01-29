@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 3: Liên hệ giữa dây và khoảng cách từ tâm đến dây</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📐 Toán 9 – Hình học</h1>
+    <p>Bài 3: Liên hệ giữa dây và khoảng cách từ tâm đến dây</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Định lý</h2>
+      <p>Trong một đường tròn:</p>
+      <ul>
+        <li>Hai dây bằng nhau thì cách đều tâm.</li>
+        <li>Hai dây cách đều tâm thì bằng nhau.</li>
+        <li>Dây nào lớn hơn thì dây đó gần tâm hơn.</li>
+        <li>Dây nào gần tâm hơn thì dây đó lớn hơn.</li>
+      </ul>
+      
+      <h2>2. Ký hiệu</h2>
+      <p>Gọi \( AB, CD \) là hai dây; \( OH, OK \) là khoảng cách từ tâm \( O \) đến \( AB, CD \).</p>
+      <p>Khi đó:<br>
+         \( AB = CD \Leftrightarrow OH = OK \)<br>
+         \( AB > CD \Leftrightarrow OH < OK \)</p>
+      
+      <h2>3. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Trong đường tròn \( (O) \), dây \( AB = 12 \, \text{cm} \), dây \( CD = 16 \, \text{cm} \). So sánh khoảng cách từ \( O \) đến hai dây.</p>
+      
+      <h2>4. Đáp án</h2>
+      <p>Vì \( AB < CD \) nên khoảng cách từ \( O \) đến \( AB \) **lớn hơn** khoảng cách từ \( O \) đến \( CD \).</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_HH_Ch2_Bai3.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

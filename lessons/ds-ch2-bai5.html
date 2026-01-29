@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 5: Hệ số góc của đường thẳng y = ax + b</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Toán 9 – Đại số</h1>
+    <p>Bài 5: Hệ số góc của đường thẳng \( y = ax + b \)</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Khái niệm hệ số góc</h2>
+      <p>Trong hàm số bậc nhất \( y = ax + b \), hệ số \( a \) được gọi là <strong>hệ số góc</strong> của đường thẳng.</p>
+      
+      <h2>2. Ý nghĩa hình học</h2>
+      <p>Gọi \( \alpha \) là góc tạo bởi đường thẳng \( y = ax + b \) và trục Ox:<br>
+         • Nếu \( a > 0 \) thì \( \alpha \) là góc nhọn, và \( a \) càng lớn thì \( \alpha \) càng lớn.<br>
+         • Nếu \( a < 0 \) thì \( \alpha \) là góc tù, và \( |a| \) càng lớn thì \( \alpha \) càng gần \( 180^\circ \).</p>
+      
+      <p>→ Ta có: \( a = \tan \alpha \) (với \( \alpha \ne 90^\circ \)).</p>
+      
+      <h2>3. Ví dụ</h2>
+      <p>Đường thẳng \( y = \sqrt{3}x + 1 \) có hệ số góc \( a = \sqrt{3} \).<br>
+         → \( \tan \alpha = \sqrt{3} \Rightarrow \alpha = 60^\circ \).</p>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Xác định hệ số góc của các đường thẳng:<br>
+         a) \( y = -2x + 3 \)<br>
+         b) \( y = \dfrac{1}{2}x - 1 \)</p>
+      
+      <p><strong>Câu 2:</strong> Tính góc \( \alpha \) tạo bởi đường thẳng \( y = x + 2 \) và trục Ox.</p>
+      
+      <h2>5. Đáp án</h2>
+      <p><strong>Câu 1:</strong><br>
+         a) \( a = -2 \)<br>
+         b) \( a = \dfrac{1}{2} \)</p>
+      
+      <p><strong>Câu 2:</strong><br>
+         \( a = 1 = \tan \alpha \Rightarrow \alpha = 45^\circ \)</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_Ch2_Bai5.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>

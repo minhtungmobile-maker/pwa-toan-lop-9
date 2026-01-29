@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 2: Đồ thị của hàm số y = ax²</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="../js/katex-render.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📘 Toán 9 – Đại số</h1>
+    <p>Bài 2: Đồ thị của hàm số \( y = ax^2 \)</p>
+    <button id="export-pdf">📄 PDF</button>
+  </header>
+
+  <main class="lesson-page">
+    <div class="lesson-content">
+      <h2>1. Đặc điểm đồ thị</h2>
+      <p>Đồ thị của hàm số \( y = ax^2 \) (\( a \ne 0 \)) là một <strong>parabol</strong> có đỉnh tại gốc tọa độ \( O(0;0) \), nhận trục tung làm trục đối xứng.</p>
+      
+      <ul>
+        <li>Nếu \( a > 0 \): parabol <strong>quay lên trên</strong>, nằm phía trên trục hoành.</li>
+        <li>Nếu \( a < 0 \): parabol <strong>quay xuống dưới</strong>, nằm phía dưới trục hoành.</li>
+      </ul>
+      
+      <h2>2. Cách vẽ</h2>
+      <p>Lập bảng giá trị với các \( x \) đối xứng qua 0 (ví dụ: -2, -1, 0, 1, 2), rồi vẽ các điểm và nối thành đường cong.</p>
+      
+      <h2>3. Ví dụ</h2>
+      <p>Vẽ đồ thị \( y = -x^2 \):<br>
+         Bảng giá trị:<br>
+         \( x: -2, -1, 0, 1, 2 \)<br>
+         \( y: -4, -1, 0, -1, -4 \)</p>
+      
+      <h2>4. Bài tập tự luyện</h2>
+      <p><strong>Câu 1:</strong> Vẽ đồ thị hàm số \( y = \dfrac{1}{2}x^2 \).</p>
+      
+      <h2>5. Đáp án</h2>
+      <p>Bảng giá trị:<br>
+         \( x = -2 \Rightarrow y = 2 \)<br>
+         \( x = -1 \Rightarrow y = 0.5 \)<br>
+         \( x = 0 \Rightarrow y = 0 \)<br>
+         \( x = 1 \Rightarrow y = 0.5 \)<br>
+         \( x = 2 \Rightarrow y = 2 \)<br>
+         → Vẽ parabol đi qua các điểm này, quay lên trên.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p><a href="../index.html">← Quay về trang chủ</a></p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script>
+    document.getElementById('export-pdf')?.addEventListener('click', () => {
+      const element = document.querySelector('.lesson-content');
+      const opt = {
+        margin: 10,
+        filename: 'Toan9_Ch4_Bai2.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+      };
+      html2pdf().set(opt).from(element).save();
+    });
+  </script>
+</body>
+</html>
