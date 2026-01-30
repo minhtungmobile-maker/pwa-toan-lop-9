@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hệ phương trình – Level 3</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <style>.lesson-content{max-width:800px;margin:0 auto;padding:1.5rem}.back-btns{margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap}.back-btn{background:#e3f2fd;color:#1976d2;border:none;padding:0.5rem 1rem;border-radius:8px;cursor:pointer;text-decoration:none}</style>
+</head>
+<body>
+  <header style="background:#ffd166;">
+    <h1>🚀 LEVEL 3: KHÁ</h1>
+    <p>Hệ phương trình – Giải bằng phương pháp thế</p>
+  </header>
+
+  <main class="lesson-content">
+    <h2>🧮 Các bước giải</h2>
+    <ol>
+      <li>Từ một phương trình, biểu diễn một ẩn theo ẩn kia.</li>
+      <li>Thế vào phương trình còn lại → được phương trình một ẩn.</li>
+      <li>Giải phương trình → tìm nghiệm.</li>
+    </ol>
+    
+    <h2>✅ Ví dụ</h2>
+    <p>Giải hệ: 
+      \[
+      \begin{cases}
+        x + y = 5 \\
+        2x - y = 1
+      \end{cases}
+      \]
+    </p>
+    <p><strong>Giải:</strong><br>
+       Từ PT1: \( y = 5 - x \)<br>
+       Thế vào PT2: \( 2x - (5 - x) = 1 \Rightarrow 3x = 6 \Rightarrow x = 2 \)<br>
+       → \( y = 5 - 2 = 3 \)<br>
+       → Nghiệm: \( (2; 3) \)</p>
+    
+    <div class="back-btns">
+      <a href="../../index.html" class="back-btn">🏠 Về trang chủ</a>
+      <button class="back-btn" onclick="history.back()">← Quay lại</button>
+    </div>
+  </main>
+
+  <script>
+    localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons') || '0') + 1).toString());
+  </script>
+</body>
+</html>

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Học Toán 9 theo dạng – công thức – mẹo. Miễn phí, không quảng cáo, hỗ trợ offline.">
-  <title>Toán Lớp 9</title>
+  <meta name="description" content="Học Toán 9 theo 5 cấp độ: Yếu → Xuất sắc. Chuẩn SGK Bộ GD&ĐT 2024. Miễn phí, offline, cài như app.">
+  <title>Toán Lớp 9 – 5 Cấp Độ</title>
 
   <!-- PWA -->
   <link rel="manifest" href="manifest.json">
@@ -14,32 +14,35 @@
   <!-- CSS -->
   <style>
     :root {
-      --primary: #1976d2;
-      --accent: #ff6f00;
-      --light: #f5f9ff;
-      --card: #ffffff;
-      --text: #212121;
+      --level1: #ff6b6b;
+      --level2: #4ecdc4;
+      --level3: #ffd166;
+      --level4: #118ab2;
+      --level5: #06d6a0;
+      --light-bg: #f5f9ff;
+      --card-bg: #ffffff;
+      --text-color: #212121;
     }
     body.dark-mode {
-      --card: #1e1e1e;
-      --text: #e0e0e0;
-      --light: #121212;
+      --light-bg: #121212;
+      --card-bg: #1e1e1e;
+      --text-color: #e0e0e0;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
-      color: var(--text);
-      background: var(--light);
+      color: var(--text-color);
+      background: var(--light-bg);
       padding-bottom: 2rem;
     }
 
     header {
-      background: var(--primary);
+      background: #1976d2;
       color: white;
-      padding: 1.2rem;
       text-align: center;
+      padding: 1.2rem 1rem;
       position: relative;
     }
     #theme-toggle {
@@ -47,215 +50,178 @@
       top: 1rem;
       right: 1rem;
       background: none;
-      border: none;      color: white;
+      border: none;
+      color: white;
       font-size: 1.5rem;
       cursor: pointer;
     }
 
-    .tabs {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      padding: 0.8rem;
-      flex-wrap: wrap;
-      background: var(--light);
+    .level-card {
+      background: var(--card-bg);
+      padding: 1.5rem;
+      border-radius: 16px;
+      margin: 1.2rem auto;
+      max-width: 800px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      border-left: 5px solid;
+      transition: transform 0.2s;
     }
-    .tab-btn {
-      background: #e3f2fd;
+    .level-card:hover { transform: translateY(-2px); }
+
+    .level-1 { border-left-color: var(--level1); }
+    .level-2 { border-left-color: var(--level2); }
+    .level-3 { border-left-color: var(--level3); }
+    .level-4 { border-left-color: var(--level4); }
+    .level-5 { border-left-color: var(--level5); }
+
+    .level-title { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem; }
+    .level-icon { font-size: 1.4rem; }
+    .level-title h2 { font-size: 1.4rem; color: var(--text-color); }
+
+    .level-desc { color: #666; margin: 0.6rem 0; font-size: 0.95rem; }
+    body.dark-mode .level-desc { color: #bbb; }
+
+    ul { margin: 1rem 0; padding-left: 1.5rem; }
+    li { margin-bottom: 0.4rem; line-height: 1.5; }
+
+    .btn {
+      background: #1976d2;
+      color: white;
       border: none;
       padding: 0.6rem 1.2rem;
-      border-radius: 10px;
+      border-radius: 8px;
       font-weight: 600;
       cursor: pointer;
-    }
-    .tab-btn.active {
-      background: var(--primary);
-      color: white;
-    }
-
-    .section { display: none; }
-    .section.active { display: block; }
-
-    .card {
-      max-width: 800px;
-      margin: 1.5rem auto;
-      padding: 1.5rem;
-      background: var(--card);
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .topic-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
       margin-top: 1rem;
-    }
-    .topic-card {
-      background: #e3f2fd;
-      padding: 1.2rem;
-      border-radius: 12px;
-      cursor: pointer;
-      transition: transform 0.2s;    }
-    .topic-card:hover {
-      transform: translateY(-3px);
-      background: #bbdefb;
-    }
-
-    .nav-buttons {
-      display: flex;
-      gap: 1rem;
-      margin-top: 1.5rem;
-      flex-wrap: wrap;
-    }
-    .nav-btn {
-      background: var(--light);
-      color: var(--primary);
-      border: 2px solid var(--primary);
-      padding: 0.6rem 1.2rem;
-      border-radius: 10px;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
       display: inline-block;
+      text-decoration: none;
+      transition: background 0.2s;
     }
-    .nav-btn:hover {
-      background: var(--primary);
-      color: white;
-    }
+    .btn:hover { background: #1565c0; }
+    .btn-exercise { background: #4caf50; }
+    .btn-exercise:hover { background: #388e3c; }
 
     footer {
       text-align: center;
       padding: 1.5rem;
       color: #666;
       font-size: 0.9rem;
+      margin-top: 2rem;
     }
 
     @media (max-width: 600px) {
-      .tabs { flex-direction: column; align-items: stretch; }
-      .tab-btn { width: 100%; }
-      .nav-buttons { flex-direction: column; }
+      header h1 { font-size: 1.5rem; }
+      .level-card { margin: 1rem 1rem; }
+      .btn { width: 100%; }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>📘 TOÁN LỚP 9</h1>
+    <p>Học theo 5 cấp độ – từ yếu đến xuất sắc</p>
     <button id="theme-toggle">🌙</button>
   </header>
 
-  <nav class="tabs">
-    <button class="tab-btn active" data-tab="home">Trang chủ</button>    <button class="tab-btn" data-tab="learn">Học theo bài</button>
-    <button class="tab-btn" data-tab="practice">Luyện đề</button>
-    <button class="tab-btn" data-tab="progress">Tiến bộ</button>
-    <button class="tab-btn" data-tab="contact">Phụ huynh</button>
-  </nav>
-
-  <!-- TRANG CHỦ -->
-  <section id="home" class="section active">
-    <div class="card">
-      <h2>🌟 HỌC TOÁN 9 THEO DẠNG – CÔNG THỨC – MẸO</h2>
-      <p>Ứng dụng này giúp bạn:</p>
-      <ul style="margin:1rem 0;padding-left:1.5rem;">
-        <li>✅ Học từng dạng toán cụ thể</li>
-        <li>✅ Nắm công thức tối thiểu</li>
-        <li>✅ Làm bài ngay sau lý thuyết</li>
-        <li>✅ Ôn tập theo đề thi thật</li>
-      </ul>
-      <button onclick="showSection('learn')" style="background:#1976d2;color:white;border:none;padding:0.6rem 1.2rem;border-radius:8px;margin-top:1rem;">➡️ BẮT ĐẦU HỌC</button>
+  <!-- LEVEL 1: YẾU -->
+  <div class="level-card level-1">
+    <div class="level-title">
+      <span class="level-icon">⚠️</span>
+      <h2>LEVEL 1: YẾU – LẤY LẠI NỀN TẢNG</h2>
     </div>
-  </section>
+    <p class="level-desc">Dành cho bạn chưa nhớ được bảng cửu chương, chưa biết căn bậc hai là gì.</p>
+    <ul>
+      <li>✅ Căn bậc hai bằng hình ảnh</li>
+      <li>✅ Cộng trừ nhân chia số nguyên</li>
+      <li>✅ Làm bài với đáp án từng bước</li>
+    </ul>
+    <button class="btn" onclick="goTo('levels/level-1-yếu/ds-ch1-bai1.html')">➡️ BẮT ĐẦU HỌC</button>
+  </div>
 
-  <!-- HỌC THEO BÀI -->
-  <section id="learn" class="section">
-    <div class="card">
-      <h2>📚 HỌC THEO DẠNG TOÁN</h2>
-      <div class="topic-grid">
-        <div class="topic-card" onclick="window.location='lessons/ds-ch1-bai1.html'">
-          <h3>🔢 Căn bậc hai</h3>
-          <p>Công thức + ví dụ + làm ngay</p>
-        </div>
-        <div class="topic-card" onclick="window.location='lessons/hh-ch1-bai1.html'">
-          <h3>📐 Hệ thức lượng</h3>
-          <p>5 hệ thức + mẹo nhớ</p>
-        </div>
-        <div class="topic-card" onclick="window.location='lessons/ds-ch2-bai1.html'">
-          <h3>📈 Hàm số bậc nhất</h3>
-          <p>Đồ thị + ứng dụng</p>
-        </div>
-        <div class="topic-card" onclick="window.location='lessons/ds-ch3-bai1.html'">
-          <h3>🧮 Hệ phương trình</h3>
-          <p>Thế + cộng đại số</p>
-        </div>
-        <div class="topic-card" onclick="window.location='lessons/ds-ch4-bai1.html'">
-          <h3>📉 Hàm số y = ax²</h3>
-          <p>Parabol + đỉnh</p>
-        </div>
-        <div class="topic-card" onclick="window.location='lessons/hh-ch2-bai1.html'">
-          <h3>⭕ Đường tròn</h3>
-          <p>Tâm – bán kính – tiếp tuyến</p>
-        </div>      </div>
-      <div class="nav-buttons">
-        <a href="#" class="nav-btn" onclick="history.back()">← Quay lại trang trước</a>
-        <a href="./" class="nav-btn">🏠 Về trang chủ</a>
-      </div>
+  <!-- LEVEL 2: TRUNG BÌNH -->
+  <div class="level-card level-2">
+    <div class="level-title">
+      <span class="level-icon">🌱</span>
+      <h2>LEVEL 2: TRUNG BÌNH – CỐT LÕI SGK</h2>
     </div>
-  </section>
+    <p class="level-desc">Đạt điểm 5–6 thi thử. Hiểu được công thức, làm được dạng cơ bản.</p>
+    <ul>
+      <li>✅ Hệ thức lượng trong tam giác vuông</li>
+      <li>✅ Giải hệ phương trình bằng thế</li>
+      <li>✅ Đồ thị hàm số bậc nhất</li>
+    </ul>
+    <button class="btn" onclick="goTo('levels/level-2-trung-binh/ds-ch2-bai1.html')">➡️ BẮT ĐẦU HỌC</button>
+  </div>
+
+  <!-- LEVEL 3: KHÁ -->
+  <div class="level-card level-3">
+    <div class="level-title">
+      <span class="level-icon">🚀</span>
+      <h2>LEVEL 3: KHÁ – ÔN THI HIỆU QUẢ</h2>
+    </div>
+    <p class="level-desc">Đạt điểm 7–8. Làm được đề thi thật, tự tin giải bài nâng cao.</p>
+    <ul>
+      <li>✅ Phương trình bậc hai – Vi-ét</li>
+      <li>✅ Hình học đường tròn – tiếp tuyến</li>
+      <li>✅ Giải bài toán bằng lập phương trình</li>
+    </ul>
+    <button class="btn" onclick="goTo('levels/level-3-kha/ds-ch3-bai1.html')">➡️ BẮT ĐẦU HỌC</button>
+  </div>
+
+  <!-- LEVEL 4: GIỎI -->
+  <div class="level-card level-4">
+    <div class="level-title">
+      <span class="level-icon">🏆</span>
+      <h2>LEVEL 4: GIỎI – ĐIỂM CAO</h2>
+    </div>
+    <p class="level-desc">Đạt điểm 8–9. Giải được câu cuối đề thi, tư duy linh hoạt.</p>
+    <ul>
+      <li>✅ Cung chứa góc – quỹ tích</li>
+      <li>✅ Bất đẳng thức – cực trị</li>
+      <li>✅ Đề thi chuyên – mở rộng</li>
+    </ul>
+    <button class="btn" onclick="goTo('levels/level-4-gioi/hh-ch3-bai6.html')">➡️ BẮT ĐẦU HỌC</button>
+  </div>
+
+  <!-- LEVEL 5: XUẤT SẮC -->
+  <div class="level-card level-5">
+    <div class="level-title">
+      <span class="level-icon">✨</span>
+      <h2>LEVEL 5: XUẤT SẮC – CHUẨN OLYMPIC</h2>
+    </div>
+    <p class="level-desc">Đạt điểm 9–10. Giải được bài thi vào trường chuyên, luyện thi quốc gia.</p>
+    <ul>
+      <li>✅ Hình học phức tạp – đồng dạng, tỉ lệ</li>
+      <li>✅ Số học – chia hết, modulo</li>
+      <li>✅ Đề thi HSG cấp tỉnh</li>
+    </ul>
+    <button class="btn" onclick="goTo('levels/level-5-xuat-sac/exam-hsg.html')">➡️ BẮT ĐẦU HỌC</button>
+  </div>
 
   <!-- LUYỆN ĐỀ -->
-  <section id="practice" class="section">
-    <div class="card">
-      <h2>📝 LUYỆN ĐỀ THI THẬT</h2>
-      <ul style="list-style:none;padding:0;">
-        <li style="margin:0.5rem 0;"><a href="exercises/de-on-thi-vao-10-mau-1.html">Mẫu 1 – Hà Nội</a></li>
-        <li style="margin:0.5rem 0;"><a href="exercises/de-on-thi-vao-10-mau-2.html">Mẫu 2 – TP.HCM</a></li>
-        <li style="margin:0.5rem 0;"><a href="exercises/de-on-thi-vao-10-de-3.html">Đề 3 – Tổng hợp</a></li>
-        <li style="margin:0.5rem 0;"><a href="exercises/de-kiem-tra-15p-ch1.html">Kiểm tra 15 phút – Chương I</a></li>
-        <li style="margin:0.5rem 0;"><a href="exercises/de-kiem-tra-1-tiet-ch1.html">Kiểm tra 1 tiết – Chương I</a></li>
-      </ul>
-      <div class="nav-buttons">
-        <a href="#" class="nav-btn" onclick="history.back()">← Quay lại trang trước</a>
-        <a href="./" class="nav-btn">🏠 Về trang chủ</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- TIẾN BỘ -->
-  <section id="progress" class="section">
-    <div class="card">
-      <h2>📈 TIẾN BỘ HỌC TẬP</h2>
-      <p>✅ Đã học: <strong id="lesson-count">0</strong> bài</p>
-      <p>✅ Đã làm: <strong id="exercise-count">0</strong> đề</p>
-      <div class="nav-buttons">
-        <a href="#" class="nav-btn" onclick="history.back()">← Quay lại trang trước</a>
-        <a href="./" class="nav-btn">🏠 Về trang chủ</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- PHỤ HUYNH -->
-  <section id="contact" class="section">
-    <div class="card">
-      <h2>📞 GỬI PHỤ HUYNH</h2>
-      <p>Ứng dụng này hoàn toàn <strong>miễn phí</strong>, không quảng cáo, không thu thập dữ liệu.</p>
-      <p>Nếu thấy con học được, xin hãy:</p>
-      <ul style="margin:1rem 0;padding-left:1.5rem;">
-        <li>👉 Khuyến khích con tiếp tục</li>
-        <li>👉 Chia sẻ với gia đình khác</li>
-        <li>👉 Cài app để dùng offline</li>
-      </ul>      <div class="nav-buttons">
-        <a href="#" class="nav-btn" onclick="history.back()">← Quay lại trang trước</a>
-        <a href="./" class="nav-btn">🏠 Về trang chủ</a>
-      </div>
-    </div>
-  </section>
+  <div style="text-align:center; margin-top:2rem;">
+    <button class="btn btn-exercise" onclick="goTo('exercises/de-15p-level-1.html')">
+      📝 Luyện đề theo cấp độ
+    </button>
+  </div>
 
   <footer>
     <p>© 2026 | HSTAI 777 – Hỗ trợ học sinh Việt Nam</p>
+    <p>Chuẩn SGK Bộ GD&ĐT 2024 | Miễn phí 100% | Không quảng cáo</p>
   </footer>
 
   <script>
-    // Dark mode
+    // === ĐIỀU HƯỚNG VÀ THỐNG KÊ ===
+    function goTo(url) {
+      if (url.includes('/levels/')) {
+        localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons') || '0') + 1).toString());
+      } else if (url.includes('/exercises/')) {
+        localStorage.setItem('toan9_exercises', (parseInt(localStorage.getItem('toan9_exercises') || '0') + 1).toString());
+      }
+      window.location.href = url;
+    }
+
+    // === DARK MODE ===
     const toggle = document.getElementById('theme-toggle');
     const isDark = localStorage.getItem('theme') === 'dark' || 
                    (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
@@ -270,28 +236,13 @@
       toggle.textContent = now ? '☀️' : '🌙';
     });
 
-    // Tab switching
-    function showSection(id) {
-      document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-      document.getElementById(id).classList.add('active');
-      const btn = document.querySelector([data-tab="${id}"]);
-      if (btn) btn.classList.add('active');
-    }
-
-    document.querySelectorAll('.tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const tab = btn.getAttribute('data-tab');
-        showSection(tab);
-      });
-    });
-
-    // Service Worker
+    // === SERVICE WORKER ===
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('./service-worker.js')
           .catch(err => console.warn('SW registration failed:', err));
       });
-    }  </script>
+    }
+  </script>
 </body>
 </html>

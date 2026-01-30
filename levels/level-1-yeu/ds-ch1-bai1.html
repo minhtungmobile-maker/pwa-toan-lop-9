@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Căn bậc hai – Level 1</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <style>
+    .lesson-content { max-width: 800px; margin: 0 auto; padding: 1.5rem; }
+    .back-btns { margin-top: 1.5rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+    .back-btn { background: #e3f2fd; color: #1976d2; border: none; padding: 0.5rem 1rem; border-radius: 8px; cursor: pointer; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <header style="background:#ff6b6b;">
+    <h1>⚠️ LEVEL 1: HỌC SINH YẾU</h1>
+    <p>Căn bậc hai – Hiểu từ đầu, không bỏ sót</p>
+  </header>
+
+  <main class="lesson-content">
+    <h2>🔢 Căn bậc hai là gì?</h2>
+    <p><strong>Ví dụ dễ hiểu:</strong></p>
+    <ul>
+      <li>\( 3 \times 3 = 9 \) → căn bậc hai của \( 9 \) là \( 3 \)</li>
+      <li>\( 5 \times 5 = 25 \) → căn bậc hai của \( 25 \) là \( 5 \)</li>
+    </ul>
+    
+    <h2>📌 Quy tắc</h2>
+    <p>Căn bậc hai của số \( a \) (với \( a \ge 0 \)) là số \( x \ge 0 \) sao cho \( x^2 = a \).</p>
+    <p>Ký hiệu: \( \sqrt{a} \)</p>
+    
+    <h2>✅ Làm thử ngay</h2>
+    <p>Tính: \( \sqrt{16} = ? \)</p>
+    <p><strong>Đáp án:</strong> Vì \( 4 \times 4 = 16 \), nên \( \sqrt{16} = 4 \)</p>
+    
+    <div class="back-btns">
+      <a href="../../index.html" class="back-btn">🏠 Về trang chủ</a>
+      <button class="back-btn" onclick="history.back()">← Quay lại</button>
+    </div>
+  </main>
+
+  <script>
+    // Đếm lượt học
+    localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons') || '0') + 1).toString());
+  </script>
+</body>
+</html>

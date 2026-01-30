@@ -1,0 +1,44 @@
+﻿{
+  "levels": [
+    {
+      "id": "level-1",
+      "name": "Yếu",
+      "desc": "Lấy lại nền tảng – hiểu từ đầu",
+      "color": "#ff6b6b",
+      "icon": "⚠️",
+      "path": "levels/level-1-yếu/"
+    },
+    {
+      "id": "level-2",
+      "name": "Trung bình",
+      "desc": "Nắm cốt lõi SGK – đạt điểm 5–6",
+      "color": "#4ecdc4",
+      "icon": "🌱",
+      "path": "levels/level-2-trung-binh/"
+    },
+    {
+      "id": "level-3",
+      "name": "Khá",
+      "desc": "Ôn thi hiệu quả – đạt điểm 7–8",
+      "color": "#ffd166",
+      "icon": "🚀",
+      "path": "levels/level-3-kha/"
+    },
+    {
+      "id": "level-4",
+      "name": "Giỏi",
+      "desc": "Điểm cao – giải được câu cuối",
+      "color": "#118ab2",
+      "icon": "🏆",
+      "path": "levels/level-4-gioi/"
+    },
+    {
+      "id": "level-5",
+      "name": "Xuất sắc",
+      "desc": "Chuẩn bị thi chuyên – HSG",
+      "color": "#06d6a0",
+      "icon": "✨",
+      "path": "levels/level-5-xuat-sac/"
+    }
+  ]
+}
