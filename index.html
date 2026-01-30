@@ -102,11 +102,10 @@
   <div class="card">
     <h2>📚 HỌC THEO DẠNG TOÁN</h2>
     <div class="topic-grid">
-      <div class="topic" onclick="goTo('lessons/ds-ch1-bai1.html')">🔢 Căn bậc hai</div>
-      <div class="topic" onclick="goTo('lessons/ds-ch1-bai2.html')">🧮 Căn thức & hằng đẳng thức</div>
+      <div class="topic" onclick="goTo('lessons/ds-ch1-bai6.html')">🔢 Căn bậc hai</div>
       <div class="topic" onclick="goTo('lessons/hh-ch1-bai1.html')">📐 Hệ thức lượng</div>
       <div class="topic" onclick="goTo('lessons/ds-ch2-bai1.html')">📈 Hàm số bậc nhất</div>
-      <div class="topic" onclick="goTo('lessons/ds-ch3-bai1.html')">🧩 Hệ phương trình</div>
+      <div class="topic" onclick="goTo('lessons/ds-ch3-bai1.html')">🧮 Hệ phương trình</div>
       <div class="topic" onclick="goTo('lessons/ds-ch4-bai1.html')">📉 Hàm số y = ax²</div>
       <div class="topic" onclick="goTo('lessons/hh-ch2-bai1.html')">⭕ Đường tròn</div>
       <div class="topic" onclick="goTo('lessons/hh-ch3-bai6.html')">🎯 Cung chứa góc</div>
@@ -145,17 +144,18 @@
     <p>Chuẩn SGK Bộ GD&ĐT 2024 | Miễn phí 100%</p>
   </footer>
 
-  <script>    // === ĐIỀU HƯỚNG VÀ THỐNG KÊ ===
-    function goTo(url) {
+  <script>
+    // === ĐIỀU HƯỚNG VÀ THỐNG KÊ ===    function goTo(url) {
       if (url.includes('/lessons/')) {
         localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons') || '0') + 1).toString());
       } else if (url.includes('/exercises/')) {
         localStorage.setItem('toan9_exercises', (parseInt(localStorage.getItem('toan9_exercises') || '0') + 1).toString());
       }
-      window.location.href = url;
+      window.location.href = url; // ✅ Dùng href để tránh lỗi
     }
 
     // === CẬP NHẬT TIẾN BỘ ===
     function updateProgress() {
       document.getElementById('lesson-count').textContent = localStorage.getItem('toan9_lessons') || '0';
-      docume
+      document.getElementById('exercise-count').textContent = localStorage.getItem('toa
+Đã gử
