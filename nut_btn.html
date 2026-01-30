@@ -1,0 +1,65 @@
+﻿cat > _btn.html << 'EOF'
+<!-- NÚT CHỨC NĂNG CHUẨN HSTAI 777 - ĐÃ TEST TRÊN ANDROID & PC -->
+<div style="margin-top: 2rem; display: flex; flex-wrap: wrap; gap: 1rem;">
+  <button 
+    onclick="history.back()" 
+    style="
+      background: #1976d2;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      flex: 1 1 120px;
+      text-align: center;
+      font-size: 1rem;
+    ">
+    ← Quay lại
+  </button>
+  <a 
+    href="../index.html" 
+    style="
+      background: #4caf50;
+      color: white;
+      text-decoration: none;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      flex: 1 1 120px;
+      text-align: center;
+      font-size: 1rem;
+    ">
+    🏠 Về trang chủ
+  </a>
+  <button 
+    onclick="goToNext()" 
+    style="
+      background: #ff9800;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      font-weight: 600;
+      flex: 1 1 120px;
+      text-align: center;
+      font-size: 1rem;
+    ">
+    ➡️ Bài tiếp theo
+  </button>
+</div>
+
+<script>
+  localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons') || '0') + 1).toString());
+  function goToNext() {
+    const current = window.location.pathname;
+    if (current.includes('hh-ch1-bai1')) {
+      window.location.href = '../lessons/hh-ch1-bai2.html';
+    } else if (current.includes('ds-ch1-bai1')) {
+      window.location.href = '../lessons/ds-ch1-bai2.html';
+    } else {
+      alert("Bài tiếp theo sẽ được cập nhật soon!");
+    }
+  }
+</script>
+EOF
