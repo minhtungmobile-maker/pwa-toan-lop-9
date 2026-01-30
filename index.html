@@ -60,9 +60,14 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
+    .topic-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
     .topic {
       padding: 1rem;
-      margin: 0.5rem 0;
       background: #e3f2fd;
       border-radius: 10px;
       cursor: pointer;
@@ -91,36 +96,31 @@
 <body>
   <header>
     <h1>📘 TOÁN LỚP 9</h1>
-    <p>Học theo dạng – công thức – mẹo</p>
-    <button id="theme-toggle">🌙</button>
+    <p>Học theo dạng – công thức – mẹo</p>    <button id="theme-toggle">🌙</button>
   </header>
 
   <div class="card">
-    <h2>🌟 HỌC TOÁN 9 THEO DẠNG – CÔNG THỨC – MẸO</h2>    <p>Ứng dụng này giúp bạn:</p>
-    <ul style="margin:1rem 0;padding-left:1.5rem;">
-      <li>✅ Học từng dạng toán cụ thể</li>
-      <li>✅ Nắm công thức tối thiểu</li>
-      <li>✅ Làm bài ngay sau lý thuyết</li>
-      <li>✅ Ôn tập theo đề thi thật</li>
-    </ul>
-  </div>
-
-  <div class="card">
     <h2>📚 HỌC THEO DẠNG TOÁN</h2>
-    <div class="topic" onclick="goTo('lessons/ds-ch1-bai1.html')">🔢 Căn bậc hai<br><small>Công thức + ví dụ + làm ngay</small></div>
-    <div class="topic" onclick="goTo('lessons/hh-ch1-bai1.html')">📐 Hệ thức lượng<br><small>5 hệ thức + mẹo nhớ</small></div>
-    <div class="topic" onclick="goTo('lessons/ds-ch2-bai1.html')">📈 Hàm số bậc nhất<br><small>Đồ thị + ứng dụng</small></div>
-    <div class="topic" onclick="goTo('lessons/ds-ch3-bai1.html')">🧮 Hệ phương trình<br><small>Thế + cộng đại số</small></div>
-    <div class="topic" onclick="goTo('lessons/ds-ch4-bai1.html')">📉 Hàm số y = ax²<br><small>Parabol + đỉnh</small></div>
-    <div class="topic" onclick="goTo('lessons/hh-ch2-bai1.html')">⭕ Đường tròn<br><small>Tâm – bán kính – tiếp tuyến</small></div>
+    <div class="topic-grid">
+      <div class="topic" onclick="goTo('lessons/ds-ch1-bai1.html')">🔢 Căn bậc hai</div>
+      <div class="topic" onclick="goTo('lessons/ds-ch1-bai2.html')">🧮 Căn thức & hằng đẳng thức</div>
+      <div class="topic" onclick="goTo('lessons/hh-ch1-bai1.html')">📐 Hệ thức lượng</div>
+      <div class="topic" onclick="goTo('lessons/ds-ch2-bai1.html')">📈 Hàm số bậc nhất</div>
+      <div class="topic" onclick="goTo('lessons/ds-ch3-bai1.html')">🧩 Hệ phương trình</div>
+      <div class="topic" onclick="goTo('lessons/ds-ch4-bai1.html')">📉 Hàm số y = ax²</div>
+      <div class="topic" onclick="goTo('lessons/hh-ch2-bai1.html')">⭕ Đường tròn</div>
+      <div class="topic" onclick="goTo('lessons/hh-ch3-bai6.html')">🎯 Cung chứa góc</div>
+    </div>
   </div>
 
   <div class="card">
     <h2>📝 LUYỆN ĐỀ THI THẬT</h2>
-    <div class="topic" onclick="goTo('exercises/de-on-thi-vao-10-mau-1.html')">Mẫu 1 – Hà Nội</div>
-    <div class="topic" onclick="goTo('exercises/de-on-thi-vao-10-mau-2.html')">Mẫu 2 – TP.HCM</div>
-    <div class="topic" onclick="goTo('exercises/de-on-thi-vao-10-de-3.html')">Đề 3 – Tổng hợp (dễ)</div>
-    <div class="topic" onclick="goTo('exercises/de-kiem-tra-15p-ch1.html')">Kiểm tra 15 phút – Chương I</div>
+    <div class="topic-grid">
+      <div class="topic" onclick="goTo('exercises/de-on-thi-vao-10-de-1.html')">Đề 1 – Tổng hợp</div>
+      <div class="topic" onclick="goTo('exercises/de-on-thi-vao-10-de-2.html')">Đề 2 – Nâng cao</div>
+      <div class="topic" onclick="goTo('exercises/de-1-tiet-ch1.html')">Kiểm tra 1 tiết – Chương I</div>
+      <div class="topic" onclick="goTo('exercises/de-kiem-tra-15p-ch1.html')">Kiểm tra 15 phút – Chương I</div>
+    </div>
   </div>
 
   <div class="card">
@@ -158,34 +158,4 @@
     // === CẬP NHẬT TIẾN BỘ ===
     function updateProgress() {
       document.getElementById('lesson-count').textContent = localStorage.getItem('toan9_lessons') || '0';
-      document.getElementById('exercise-count').textContent = localStorage.getItem('toan9_exercises') || '0';
-    }
-
-    // === DARK MODE ===
-    const toggle = document.getElementById('theme-toggle');
-    const isDark = localStorage.getItem('theme') === 'dark' || 
-                   (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches);
-    if (isDark) {
-      document.body.classList.add('dark-mode');
-      toggle.textContent = '☀️';
-    }
-    toggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      const now = document.body.classList.contains('dark-mode');
-      localStorage.setItem('theme', now ? 'dark' : 'light');
-      toggle.textContent = now ? '☀️' : '🌙';
-    });
-
-    // === SERVICE WORKER ===
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
-          .catch(err => console.warn('SW registration failed:', err));
-      });
-    }
-
-    // === KHỞI TẠO ===
-    document.addEventListener('DOMContentLoaded', updateProgress);
-  </script>
-</body>
-</html>
+      docume
