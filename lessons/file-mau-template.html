@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>{{TITLE}}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <style>
+    body { font-family: 'Times New Roman', serif; padding:1.5rem; max-width:800px; margin:0 auto; background:#f9f9f9; }
+    h1 { text-align:center; color:#1976d2; }
+    .sec { background:#e3f2fd; padding:1.2rem; border-radius:10px; margin:1.2rem 0; }
+    .btn { display:flex; gap:1rem; flex-wrap:wrap; }
+    .btn > * { padding:0.8rem 1.5rem; border-radius:10px; border:none; font-weight:600; }
+    .b1 { background:#1976d2; color:white; }
+    .b2 { background:#4caf50; color:white; }
+    .b3 { background:#ff9800; color:white; }
+  </style>
+</head>
+<body>
+  <h1>{{TITLE}}</h1>
+  <div class="sec">
+    <h2>1. Nội dung chính</h2>
+    {{CONTENT}}
+  </div>
+  <div class="sec">
+    <h2>2. Bài tập</h2>
+    <p>Áp dụng kiến thức trên để giải các bài tập trong SGK.</p>
+  </div>
+  <div class="btn">
+    <button class="b1" onclick="history.back()">← Quay lại</button>
+    <a class="b2" href="../index.html">🏠 Về trang chủ</a>
+    <button class="b3" onclick="goToNext()">➡️ Bài tiếp theo</button>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      renderMathInElement(document.body);
+    });
+    localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons')||'0')+1).toString());
+    function goToNext(){
+      const m = {
+        'ds-ch1-bai1':'ds-ch1-bai2','ds-ch1-bai2':'ds-ch1-bai3','ds-ch1-bai3':'ds-ch1-bai4',
+        'ds-ch1-bai4':'ds-ch1-bai5','ds-ch1-bai5':'ds-ch1-bai6','ds-ch1-bai6':'ds-ch1-bai7',
+        'ds-ch1-bai7':'ds-ch2-bai1','ds-ch2-bai1':'ds-ch2-bai2', 'ds-ch2-bai2':'ds-ch2-bai3',
+        'ds-ch2-bai3':'ds-ch2-bai4','ds-ch2-bai4':'ds-ch2-bai5','ds-ch2-bai5':'ds-ch3-bai1',
+        'ds-ch3-bai1':'ds-ch3-bai2','ds-ch3-bai2':'ds-ch3-bai3','ds-ch3-bai3':'ds-ch3-bai4',
+        'ds-ch3-bai4':'ds-ch3-bai5','ds-ch3-bai5':'ds-ch4-bai1',
+        'ds-ch4-bai1':'ds-ch4-bai2','ds-ch4-bai2':'ds-ch4-bai3','ds-ch4-bai3':'ds-ch4-bai4',
+        'ds-ch4-bai4':'ds-ch4-bai5','ds-ch4-bai5':'ds-ch4-bai6',
+        'ds-ch4-bai6':'hh-ch1-bai1','hh-ch1-bai1':'hh-ch1-bai2','hh-ch1-bai2':'hh-ch1-bai3',
+        'hh-ch1-bai3':'hh-ch1-bai4',
+        'hh-ch1-bai4':'hh-ch2-bai1','hh-ch2-bai1':'hh-ch2-bai2','hh-ch2-bai2':'hh-ch2-bai3',
+        'hh-ch2-bai3':'hh-ch2-bai4','hh-ch2-bai4':'hh-ch2-bai5',
+        'hh-ch2-bai5':'hh-ch2-bai6','hh-ch2-bai6':'hh-ch2-bai7',
+        'hh-ch2-bai7':'hh-ch3-bai1','hh-ch3-bai1':'hh-ch3-bai2','hh-ch3-bai2':'hh-ch3-bai3',
+        'hh-ch3-bai3':'hh-ch3-bai4','hh-ch3-bai4':'hh-ch3-bai5',
+        'hh-ch3-bai5':'hh-ch3-bai6',
+        'hh-ch3-bai6':'hh-ch4-bai1','hh-ch4-bai1':'hh-ch4-bai2','hh-ch4-bai2':'hh-ch4-bai3'
+      };
+      const f = window.location.pathname.split('/').pop().replace('.html','');
+      if (m[f]) window.location.href = m[f]+'.html';
+      else alert('Bài cuối cùng.');
+    }
+  </script>
+</body>
+</html>

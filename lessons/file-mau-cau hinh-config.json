@@ -1,0 +1,5 @@
+﻿{
+  "ds-ch1-bai1": {"title":"Bài 1: Căn bậc hai","content":"<p>Với số dương $a$, số $\\sqrt{a}$ được gọi là <strong>căn bậc hai số học của $a$</strong>.</p>"},
+  "ds-ch1-bai2": {"title":"Bài 2: Căn thức bậc hai và hằng đẳng thức $\\sqrt{A^2} = |A|$","content":"<p>Với biểu thức $A$, ta có $\\sqrt{A^2} = |A|$.</p>"},
+  "hh-ch1-bai1": {"title":"Bài 1: Một số hệ thức về cạnh và đường cao trong tam giác vuông","content":"<p>Cho $\\triangle ABC$ vuông tại $A$, đường cao $AH$. Ta có: $AB^2 = BH \\cdot BC$, $AC^2 = CH \\cdot BC$, $AH^2 = BH \\cdot CH$.</p>"}
+}

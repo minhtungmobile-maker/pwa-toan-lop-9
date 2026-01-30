@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bài 6: Rút gọn biểu thức chứa căn bậc hai</title>
+  <title>{{TITLE}}</title>
 
   <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
@@ -55,26 +55,16 @@
   </style>
 </head>
 <body>
-  <h1>Bài 6: Rút gọn biểu thức chứa căn bậc hai</h1>
+  <h1>{{TITLE}}</h1>
 
   <div class="section">
     <h2>1. Nội dung chính</h2>
-    <p>Để rút gọn biểu thức chứa căn bậc hai, ta thường:</p>
-    <ul>
-      <li>Đưa thừa số ra ngoài dấu căn: $\sqrt{A^2B} = |A|\sqrt{B}$ (với $B \geq 0$)</li>
-      <li>Khử mẫu của biểu thức lấy căn</li>
-      <li>Trục căn thức ở mẫu</li>
-    </ul>
-    <p><strong>Ví dụ:</strong> Rút gọn $\sqrt{18} + \sqrt{8}$</p>
-    <p><strong>Giải:</strong> $\sqrt{18} = \sqrt{9 \cdot 2} = 3\sqrt{2}$, $\sqrt{8} = \sqrt{4 \cdot 2} = 2\sqrt{2}$</p>
-    <p>→ Tổng: $3\sqrt{2} + 2\sqrt{2} = 5\sqrt{2}$</p>
+    {{CONTENT}}
   </div>
 
   <div class="section">
     <h2>2. Bài tập</h2>
-    <p>Rút gọn các biểu thức sau:</p>
-    <p>a) $\sqrt{50} - \sqrt{18}$</p>
-    <p>b) $\dfrac{1}{\sqrt{2}} + \dfrac{1}{\sqrt{8}}$</p>
+    <p>Áp dụng kiến thức trên để giải các bài tập trong SGK.</p>
   </div>
 
   <!-- NÚT CHỨC NĂNG CHUẨN HSTAI 777 -->
@@ -97,10 +87,59 @@
 
     // Thống kê lượt học
     localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons') || '0') + 1).toString());
-    // Chuyển sang bài tiếp theo
+
+    // Chuyển bài theo thứ tự chuẩn
     function goToNext() {
-      // Theo thứ tự bạn có: sau ds-ch1-bai6 là hh-ch1-bai1
-      window.location.href = 'hh-ch1-bai1.html';
+      const current = window.location.pathname.split('/').pop().replace('.html', '');
+      const nextMap = {
+        'ds-ch1-bai1': 'ds-ch1-bai2',
+        'ds-ch1-bai2': 'ds-ch1-bai3',
+        'ds-ch1-bai3': 'ds-ch1-bai4',
+        'ds-ch1-bai4': 'ds-ch1-bai5',
+        'ds-ch1-bai5': 'ds-ch1-bai6',        'ds-ch1-bai6': 'ds-ch1-bai7',
+        'ds-ch1-bai7': 'ds-ch2-bai1',
+        'ds-ch2-bai1': 'ds-ch2-bai2',
+        'ds-ch2-bai2': 'ds-ch2-bai3',
+        'ds-ch2-bai3': 'ds-ch2-bai4',
+        'ds-ch2-bai4': 'ds-ch2-bai5',
+        'ds-ch2-bai5': 'ds-ch3-bai1',
+        'ds-ch3-bai1': 'ds-ch3-bai2',
+        'ds-ch3-bai2': 'ds-ch3-bai3',
+        'ds-ch3-bai3': 'ds-ch3-bai4',
+        'ds-ch3-bai4': 'ds-ch3-bai5',
+        'ds-ch3-bai5': 'ds-ch4-bai1',
+        'ds-ch4-bai1': 'ds-ch4-bai2',
+        'ds-ch4-bai2': 'ds-ch4-bai3',
+        'ds-ch4-bai3': 'ds-ch4-bai4',
+        'ds-ch4-bai4': 'ds-ch4-bai5',
+        'ds-ch4-bai5': 'ds-ch4-bai6',
+        'ds-ch4-bai6': 'hh-ch1-bai1',
+        'hh-ch1-bai1': 'hh-ch1-bai2',
+        'hh-ch1-bai2': 'hh-ch1-bai3',
+        'hh-ch1-bai3': 'hh-ch1-bai4',
+        'hh-ch1-bai4': 'hh-ch2-bai1',
+        'hh-ch2-bai1': 'hh-ch2-bai2',
+        'hh-ch2-bai2': 'hh-ch2-bai3',
+        'hh-ch2-bai3': 'hh-ch2-bai4',
+        'hh-ch2-bai4': 'hh-ch2-bai5',
+        'hh-ch2-bai5': 'hh-ch2-bai6',
+        'hh-ch2-bai6': 'hh-ch2-bai7',
+        'hh-ch2-bai7': 'hh-ch3-bai1',
+        'hh-ch3-bai1': 'hh-ch3-bai2',
+        'hh-ch3-bai2': 'hh-ch3-bai3',
+        'hh-ch3-bai3': 'hh-ch3-bai4',
+        'hh-ch3-bai4': 'hh-ch3-bai5',
+        'hh-ch3-bai5': 'hh-ch3-bai6',
+        'hh-ch3-bai6': 'hh-ch4-bai1',
+        'hh-ch4-bai1': 'hh-ch4-bai2',
+        'hh-ch4-bai2': 'hh-ch4-bai3'
+      };
+      const next = nextMap[current];
+      if (next) {
+        window.location.href = next + '.html';
+      } else {
+        alert('Đây là bài cuối cùng.');
+      }
     }
   </script>
 </body>

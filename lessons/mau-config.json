@@ -1,0 +1,108 @@
+﻿{
+  "ds-ch1-bai1": {
+    "title": "Bài 1: Căn bậc hai",
+    "content": "<p>Với số dương $a$, số $\\sqrt{a}$ được gọi là <strong>căn bậc hai số học của $a$</strong>. Số $0$ cũng có căn bậc hai số học là $0$: $\\sqrt{0} = 0$.</p>"
+  },
+  "ds-ch1-bai2": {
+    "title": "Bài 2: Căn thức bậc hai và hằng đẳng thức $\\sqrt{A^2} = |A|$",
+    "content": "<p>Với biểu thức $A$, ta có $\\sqrt{A^2} = |A|$. Điều này cho phép rút gọn biểu thức chứa căn.</p>"
+  },
+  "ds-ch1-bai3": {
+    "title": "Bài 3: Liên hệ giữa phép nhân và phép khai phương",
+    "content": "<p>Với các số $a \\geq 0, b \\geq 0$, ta có: $\\sqrt{ab} = \\sqrt{a} \\cdot \\sqrt{b}$.</p>"
+  },
+  "ds-ch1-bai4": {
+    "title": "Bài 4: Liên hệ giữa phép chia và phép khai phương",
+    "content": "<p>Với các số $a \\geq 0, b > 0$, ta có: $\\sqrt{\\dfrac{a}{b}} = \\dfrac{\\sqrt{a}}{\\sqrt{b}}$.</p>"
+  },
+  "ds-ch1-bai5": {
+    "title": "Bài 5: Biến đổi đơn giản biểu thức chứa căn bậc hai",
+    "content": "<p>Đưa thừa số ra ngoài dấu căn: $\\sqrt{A^2B} = |A|\\sqrt{B}$ (với $B \\geq 0$).</p>"
+  },
+  "ds-ch1-bai6": {
+    "title": "Bài 6: Rút gọn biểu thức chứa căn bậc hai",
+    "content": "<p>Kết hợp các phép biến đổi để rút gọn biểu thức chứa căn bậc hai.</p>"
+  },
+  "ds-ch1-bai7": {
+    "title": "Bài 7: Căn bậc ba",
+    "content": "<p>Căn bậc ba của số $a$ là số $x$ sao cho $x^3 = a$. Ký hiệu: $\\sqrt[3]{a}$.</p>"
+  },
+  "ds-ch2-bai1": {
+    "title": "Bài 1: Nhắc lại và bổ sung các khái niệm về hàm số",
+    "content": "<p>Hàm số là một quy tắc cho tương ứng mỗi giá trị $x$ với một giá trị $y$.</p>"
+  },
+  "ds-ch2-bai2": {
+    "title": "Bài 2: Hàm số bậc nhất",
+    "content": "<p>Hàm số bậc nhất là hàm số được cho bởi công thức $y = ax + b$ ($a \\ne 0$).</p>"
+  },
+  "ds-ch2-bai3": {
+    "title": "Bài 3: Đồ thị của hàm số $y = ax + b$",
+    "content": "<p>Đồ thị là đường thẳng cắt trục tung tại $(0; b)$ và trục hoành tại $(-\\dfrac{b}{a}; 0)$.</p>"
+  },
+  "ds-ch2-bai4": {
+    "title": "Bài 4: Đường thẳng song song và đường thẳng cắt nhau",
+    "content": "<p>Hai đường thẳng $y = ax + b$ và $y = a'x + b'$: song song nếu $a = a', b \\ne b'$; cắt nhau nếu $a \\ne a'$.</p>"
+  },
+  "ds-ch2-bai5": {
+    "title": "Bài 5: Hệ số góc của đường thẳng $y = ax + b$",
+    "content": "<p>Hệ số $a$ gọi là hệ số góc. Góc tạo bởi đường thẳng và trục Ox có $\\tan \\alpha = a$.</p>"
+  },
+  "ds-ch3-bai1": {    "title": "Bài 1: Phương trình bậc nhất hai ẩn",
+    "content": "<p>Phương trình có dạng $ax + by = c$ ($a, b$ không đồng thời bằng 0).</p>"
+  },
+  "ds-ch3-bai2": {
+    "title": "Bài 2: Hệ hai phương trình bậc nhất hai ẩn",
+    "content": "<p>Hệ gồm hai phương trình bậc nhất hai ẩn.</p>"
+  },
+  "ds-ch3-bai3": {
+    "title": "Bài 3: Giải hệ phương trình bằng phương pháp thế",
+    "content": "<p>Biểu diễn một ẩn theo ẩn kia rồi thế vào phương trình còn lại.</p>"
+  },
+  "ds-ch3-bai4": {
+    "title": "Bài 4: Giải hệ phương trình bằng phương pháp cộng đại số",
+    "content": "<p>Cộng hoặc trừ hai phương trình để khử một ẩn.</p>"
+  },
+  "ds-ch3-bai5": {
+    "title": "Bài 5: Giải bài toán bằng cách lập hệ phương trình",
+    "content": "<p>Bước 1: Lập hệ; Bước 2: Giải hệ; Bước 3: Kết luận.</p>"
+  },
+  "ds-ch4-bai1": {
+    "title": "Bài 1: Hàm số $y = ax^2$ ($a \\ne 0$)",
+    "content": "<p>Tính chất: Nếu $a > 0$, hàm số đồng biến khi $x > 0$, nghịch biến khi $x < 0$.</p>"
+  },
+  "ds-ch4-bai2": {
+    "title": "Bài 2: Đồ thị của hàm số $y = ax^2$",
+    "content": "<p>Là parabol đi qua gốc tọa độ, nhận trục Oy làm trục đối xứng.</p>"
+  },
+  "ds-ch4-bai3": {
+    "title": "Bài 3: Phương trình bậc hai một ẩn",
+    "content": "<p>Dạng: $ax^2 + bx + c = 0$ ($a \\ne 0$).</p>"
+  },
+  "ds-ch4-bai4": {
+    "title": "Bài 4: Công thức nghiệm của phương trình bậc hai",
+    "content": "<p>$\\Delta = b^2 - 4ac$. Nếu $\\Delta > 0$: hai nghiệm phân biệt.</p>"
+  },
+  "ds-ch4-bai5": {
+    "title": "Bài 5: Hệ thức Vi-ét và ứng dụng",
+    "content": "<p>Nếu $x_1, x_2$ là nghiệm thì $x_1 + x_2 = -\\dfrac{b}{a}, x_1 x_2 = \\dfrac{c}{a}$.</p>"
+  },
+  "ds-ch4-bai6": {
+    "title": "Bài 6: Giải bài toán bằng cách lập phương trình bậc hai",
+    "content": "<p>Áp dụng hệ thức Vi-ét hoặc công thức nghiệm để giải bài toán thực tế.</p>"
+  },
+  "hh-ch1-bai1": {
+    "title": "Bài 1: Một số hệ thức về cạnh và đường cao trong tam giác vuông",
+    "content": "<p>Cho $\\triangle ABC$ vuông tại $A$, đường cao $AH$. Ta có:<br>1. $AB^2 = BH \\cdot BC$<br>2. $AC^2 = CH \\cdot BC$<br>3. $AH^2 = BH \\cdot CH$</p>"
+  },
+  "hh-ch1-bai2": {
+    "title": "Bài 2: Tỉ số lượng giác của góc nhọn",
+    "content": "<p>$\\sin \\alpha = \\dfrac{\\text{cạnh đối}}{\\text{cạnh huyền}}, \\cos \\alpha = \\dfrac{\\text{cạnh kề}}{\\text{cạnh huyền}}$</p>"  },
+  "hh-ch1-bai3": {
+    "title": "Bài 3: Bảng lượng giác",
+    "content": "<p>Sử dụng bảng để tìm giá trị sin, cos, tan, cot của góc nhọn.</p>"
+  },
+  "hh-ch1-bai4": {
+    "title": "Bài 4: Một số hệ thức về cạnh và góc trong tam giác vuông",
+    "content": "<p>$b = a \\sin B = a \\cos C$, $c = a \\s
+Đã gửi
+Viết cho
