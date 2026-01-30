@@ -3,76 +3,110 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Bài 1: Hệ thức lượng trong tam giác vuông</title>
-  <link rel="stylesheet" href="../css/style.css">
+  <title>Hệ thức lượng – Toán 9</title>
+
+  <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-  <script defer src="../js/katex-render.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+
+  <!-- CSS -->
+  <style>
+    body {
+      font-family: 'Inter', Arial, sans-serif;
+      line-height: 1.6;
+      padding: 1.5rem;
+      max-width: 800px;
+      margin: 0 auto;
+      background: #f9f9f9;
+      color: #212121;
+    }
+    h1, h2 {
+      color: #1976d2;
+      margin: 1.2rem 0;
+    }
+    .formula-box, .example-box, .exercise-box {
+      background: #e3f2fd;
+      padding: 1.2rem;
+      border-radius: 12px;
+      margin: 1.5rem 0;
+    }
+    .back-buttons {
+      margin-top: 2rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      background: #1976d2;
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .btn-home { background: #4caf50; }    .btn-next { background: #ff9800; }
+  </style>
 </head>
 <body>
-  <header>
-    <h1>📐 Toán 9 – Hình học</h1>
-    <p>Bài 1: Một số hệ thức về cạnh và đường cao trong tam giác vuông</p>
-    <button id="export-pdf">📄 PDF</button>
-  </header>
+  <h1>📐 Hệ thức lượng trong tam giác vuông</h1>
+  <p><strong>Mức độ:</strong> Trung bình | <strong>Chuẩn SGK Bộ GD&ĐT 2024</strong></p>
 
-  <main class="lesson-page">
-    <div class="lesson-content">
-      <h2>1. Thiết lập</h2>
-      <p>Xét tam giác \( ABC \) vuông tại \( A \), đường cao \( AH \) hạ từ \( A \) xuống cạnh huyền \( BC \).<br>
-         Ký hiệu:</p>
-      <ul>
-        <li>\( BC = a \) (cạnh huyền)</li>
-        <li>\( AB = c \), \( AC = b \)</li>
-        <li>\( BH = c' \), \( CH = b' \)</li>
-        <li>\( AH = h \)</li>
-      </ul>
-      
-      <h2>2. Các hệ thức cơ bản</h2>
-      <ol>
-        <li><strong>Hệ thức 1:</strong> \( b^2 = a \cdot b' \), \( c^2 = a \cdot c' \)</li>
-        <li><strong>Hệ thức 2:</strong> \( h^2 = b' \cdot c' \)</li>
-        <li><strong>Hệ thức 3:</strong> \( a \cdot h = b \cdot c \)</li>
-        <li><strong>Hệ thức 4:</strong> \( \dfrac{1}{h^2} = \dfrac{1}{b^2} + \dfrac{1}{c^2} \)</li>
-      </ol>
-      
-      <h2>3. Ví dụ minh họa</h2>
-      <p><strong>Ví dụ:</strong> Cho tam giác \( ABC \) vuông tại \( A \), biết \( AB = 6 \, \text{cm} \), \( AC = 8 \, \text{cm} \). Tính độ dài đường cao \( AH \).</p>
-      <p><strong>Giải:</strong><br>
-         Ta có: \( BC = \sqrt{AB^2 + AC^2} = \sqrt{6^2 + 8^2} = \sqrt{100} = 10 \, \text{cm} \).<br>
-         Áp dụng hệ thức 3: \( BC \cdot AH = AB \cdot AC \)<br>
-         \( \Rightarrow 10 \cdot AH = 6 \cdot 8 = 48 \)<br>
-         \( \Rightarrow AH = \dfrac{48}{10} = 4.8 \, \text{cm} \).</p>
-      
-      <h2>4. Bài tập tự luyện</h2>
-      <p><strong>Câu 1:</strong> Trong tam giác vuông, cạnh huyền bằng \( 13 \, \text{cm} \), một cạnh góc vuông bằng \( 5 \, \text{cm} \). Tính:<br>
-         a) Cạnh góc vuông còn lại<br>
-         b) Đường cao ứng với cạnh huyền</p>
-      
-      <h2>5. Đáp án</h2>
-      <p><strong>Câu 1:</strong><br>
-         a) Gọi cạnh cần tìm là \( x \): \( x^2 + 5^2 = 13^2 \Rightarrow x^2 = 169 - 25 = 144 \Rightarrow x = 12 \, \text{cm} \)<br>
-         b) Gọi đường cao là \( h \): \( 13 \cdot h = 5 \cdot 12 = 60 \Rightarrow h = \dfrac{60}{13} \approx 4.62 \, \text{cm} \)</p>
-    </div>
-  </main>
+  <div class="formula-box">
+    <h2>📌 Các hệ thức cơ bản</h2>
+    <p>Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Khi đó:</p>
+    <ol>
+      <li>$AB^2 = BH \cdot BC$</li>
+      <li>$AC^2 = CH \cdot BC$</li>
+      <li>$AH^2 = BH \cdot CH$</li>
+      <li>$AB \cdot AC = BC \cdot AH$</li>
+      <li>$\dfrac{1}{AH^2} = \dfrac{1}{AB^2} + \dfrac{1}{AC^2}$</li>
+    </ol>
+  </div>
 
-  <footer>
-    <p><a href="../index.html">← Quay về trang chủ</a></p>
-  </footer>
+  <div class="example-box">
+    <h2>✅ Ví dụ mẫu</h2>
+    <p>Cho tam giác $ABC$ vuông tại $A$, $AB = 6\,\text{cm}, AC = 8\,\text{cm}$. Tính độ dài đường cao $AH$.</p>
+    <p><strong>Giải:</strong></p>
+    <p>- Tính cạnh huyền: $BC = \sqrt{AB^2 + AC^2} = \sqrt{36 + 64} = \sqrt{100} = 10\,\text{cm}$</p>
+    <p>- Áp dụng hệ thức: $AB \cdot AC = BC \cdot AH$</p>
+    <p>→ $6 \cdot 8 = 10 \cdot AH$ → $AH = \dfrac{48}{10} = 4.8\,\text{cm}$</p>
+  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <div class="exercise-box">
+    <h2>✏️ Bài tập áp dụng</h2>
+    <p>Cho tam giác $ABC$ vuông tại $A$, $AB = 3\,\text{cm}, AC = 4\,\text{cm}$. Tính $AH$.</p>
+    <p><strong>Gợi ý:</strong> Làm tương tự ví dụ trên.</p>
+    <p><strong>Đáp án:</strong> $AH = 2.4\,\text{cm}$</p>
+  </div>
+
+  <!-- NÚT CHỨC NĂNG -->
+  <div class="back-buttons">
+    <button class="btn" onclick="history.back()">← Quay lại</button>
+    <a href="../index.html" class="btn btn-home">🏠 Về trang chủ</a>
+    <button class="btn btn-next" onclick="goToNext()">➡️ Bài tiếp theo</button>
+  </div>
+
   <script>
-    document.getElementById('export-pdf')?.addEventListener('click', () => {
-      const element = document.querySelector('.lesson-content');
-      const opt = {
-        margin: 10,
-        filename: 'Toan9_HH_Ch1_Bai1.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      };
-      html2pdf().set(opt).from(element).save();
+    // Render công thức
+    document.addEventListener("DOMContentLoaded", () => {
+      renderMathInElement(document.body, {
+        delimiters: [
+          { left: "$$", right: "$$", display: true },
+          { left: "$", right: "$", display: false }
+        ]      });
     });
+
+    // Thống kê lượt học
+    localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons') || '0') + 1).toString());
+
+    // Nút "Bài tiếp"
+    function goToNext() {
+      alert("Bài tiếp: Tỉ số lượng giác của góc nhọn");
+      // window.location.href = 'hh-ch1-bai2.html';
+    }
   </script>
 </body>
 </html>
