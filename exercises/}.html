@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title></title>
+  <style>
+    body { font-family: Arial; padding:1.5rem; max-width:800px; margin:0 auto; }
+    .btn { margin-top:2rem; display:flex; gap:1rem; flex-wrap:wrap; }
+    .btn > * { padding:0.8rem 1.5rem; border-radius:10px; border:none; font-weight:600; }
+    .b1 { background:#1976d2; color:white; }
+    .b2 { background:#4caf50; color:white; }
+  </style>
+</head>
+<body>
+  <h1></h1>
+  <p>Đề thi đang được cập nhật...</p>
+  <div class="btn">
+    <button class="b1" onclick="history.back()">← Quay lại</button>
+    <a class="b2" href="../index.html">🏠 Về trang chủ</a>
+  </div>
+  <script>
+    localStorage.setItem('toan9_exercises', (parseInt(localStorage.getItem('toan9_exercises')||'0')+1).toString());
+  </script>
+</body>
+</html>

@@ -1,103 +1,25 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Học Toán 9 theo dạng – công thức – mẹo. Chuẩn SGK Bộ GD&ĐT 2024. Miễn phí, offline, cài như app.">
   <title>Toán Lớp 9</title>
-
-  <!-- PWA -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#1976d2">
   <link rel="apple-touch-icon" href="icon-192.png">
-
-  <!-- CSS -->
   <style>
-    :root {
-      --primary: #1976d2;
-      --light-bg: #f5f9ff;
-      --card-bg: #ffffff;
-      --text-color: #212121;
-    }
-    body.dark-mode {
-      --light-bg: #121212;
-      --card-bg: #1e1e1e;
-      --text-color: #e0e0e0;
-    }
-
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--text-color);
-      background: var(--light-bg);
-      padding-bottom: 2rem;
-    }
-
-    header {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 1.2rem 1rem;
-      position: relative;
-    }
-    #theme-toggle {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      background: none;
-      border: none;
-      color: white;      font-size: 1.5rem;
-      cursor: pointer;
-    }
-
-    .card {
-      max-width: 800px;
-      margin: 1.5rem auto;
-      padding: 1.5rem;
-      background: var(--card-bg);
-      border-radius: 16px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    }
-
-    .topic-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .topic {
-      padding: 1rem;
-      background: #e3f2fd;
-      border-radius: 10px;
-      cursor: pointer;
-      transition: background 0.2s;
-    }
-    .topic:hover {
-      background: #bbdefb;
-    }
-
-    h1, h2, h3 {
-      margin-bottom: 1rem;
-    }
-
-    footer {
-      text-align: center;
-      padding: 1.5rem;
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 600px) {
-      .card { margin: 1rem 1rem; }
-    }
+    :root { --primary: #1976d2; --light-bg: #f5f9ff; --card-bg: #ffffff; --text-color: #212121; }
+    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text-color); background: var(--light-bg); padding-bottom: 2rem; }
+    header { background: var(--primary); color: white; text-align: center; padding: 1.2rem 1rem; position: relative; }
+    .card { max-width: 800px; margin: 1.5rem auto; padding: 1.5rem; background: var(--card-bg); border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+    .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem; }
+    .topic { padding: 1rem; background: #e3f2fd; border-radius: 10px; cursor: pointer; }
+    .topic:hover { background: #bbdefb; }
+    footer { text-align: center; padding: 1.5rem; color: #666; font-size: 0.9rem; }
   </style>
 </head>
 <body>
-  <header>
-    <h1>📘 TOÁN LỚP 9</h1>
-    <p>Học theo dạng – công thức – mẹo</p>    <button id="theme-toggle">🌙</button>
-  </header>
+  <header><h1>📘 TOÁN LỚP 9</h1></header>
 
   <div class="card">
     <h2>📚 HỌC THEO DẠNG TOÁN</h2>
@@ -122,40 +44,19 @@
     </div>
   </div>
 
-  <div class="card">
-    <h2>📈 TIẾN BỘ HỌC TẬP</h2>
-    <p>✅ Đã học: <strong id="lesson-count">0</strong> bài</p>
-    <p>✅ Đã làm: <strong id="exercise-count">0</strong> đề</p>
-  </div>
-
-  <div class="card">
-    <h2>📞 GỬI PHỤ HUYNH</h2>
-    <p>Ứng dụng này hoàn toàn <strong>miễn phí</strong>, không quảng cáo, không thu thập dữ liệu.</p>
-    <p>Nếu thấy con học được, xin hãy:</p>
-    <ul style="margin:1rem 0;padding-left:1.5rem;">
-      <li>👉 Khuyến khích con tiếp tục</li>
-      <li>👉 Chia sẻ với gia đình khác</li>
-      <li>👉 Cài app để dùng offline</li>
-    </ul>
-  </div>
-
-  <footer>
-    <p>© 2026 | HSTAI 777 – Hỗ trợ học sinh Việt Nam</p>
-    <p>Chuẩn SGK Bộ GD&ĐT 2024 | Miễn phí 100%</p>
-  </footer>
+  <footer><p>© 2026 | HSTAI 777</p></footer>
 
   <script>
-    // === ĐIỀU HƯỚNG VÀ THỐNG KÊ ===    function goTo(url) {
-      if (url.includes('/lessons/')) {
-        localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons') || '0') + 1).toString());
-      } else if (url.includes('/exercises/')) {
-        localStorage.setItem('toan9_exercises', (parseInt(localStorage.getItem('toan9_exercises') || '0') + 1).toString());
-      }
-      window.location.href = url; // ✅ Dùng href để tránh lỗi
+    function goTo(url) {
+      if (url.includes('/lessons/')) localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons') || '0') + 1).toString());
+      else if (url.includes('/exercises/')) localStorage.setItem('toan9_exercises', (parseInt(localStorage.getItem('toan9_exercises') || '0') + 1).toString());
+      window.location.href = url;
     }
-
-    // === CẬP NHẬT TIẾN BỘ ===
-    function updateProgress() {
-      document.getElementById('lesson-count').textContent = localStorage.getItem('toan9_lessons') || '0';
-      document.getElementById('exercise-count').textContent = localStorage.getItem('toa
-Đã gử
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./service-worker.js');
+      });
+    }
+  </script>
+</body>
+</html>

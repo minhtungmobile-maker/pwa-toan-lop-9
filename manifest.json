@@ -1,7 +1,6 @@
-﻿{
-  "name": "Toán Lớp 9 – 5 Cấp Độ",
+{
+  "name": "Toán Lớp 9",
   "short_name": "Toán 9",
-  "description": "Học Toán 9 theo 5 cấp độ: Yếu → Xuất sắc. Chuẩn SGK Bộ GD&ĐT.",
   "start_url": "./",
   "display": "standalone",
   "background_color": "#ffffff",

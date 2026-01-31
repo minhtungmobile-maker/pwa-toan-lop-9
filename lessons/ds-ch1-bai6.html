@@ -2,106 +2,35 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bài 6: Rút gọn biểu thức chứa căn bậc hai</title>
-
-  <!-- KaTeX -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-
-  <!-- CSS -->
-  <style>
-    body {
-      font-family: 'Times New Roman', serif;
-      line-height: 1.6;
-      padding: 1.5rem;
-      max-width: 800px;
-      margin: 0 auto;
-      background: #f9f9f9;
-      color: #212121;
-    }
-    h1 {
-      text-align: center;
-      color: #1976d2;
-      margin-bottom: 1.5rem;
-    }
-    .section {
-      background: #e3f2fd;
-      padding: 1.2rem;
-      border-radius: 10px;
-      margin: 1.2rem 0;
-    }
-    .btn-bar {
-      margin-top: 2rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-    .btn {
-      padding: 0.8rem 1.5rem;
-      border-radius: 10px;
-      border: none;
-      font-weight: 600;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      text-align: center;
-      flex: 1 1 120px;      font-size: 1rem;
-    }
-    .btn-back { background: #1976d2; color: white; }
-    .btn-home { background: #4caf50; color: white; }
-    .btn-next { background: #ff9800; color: white; }
-  </style>
+  <style>body{font-family:'Times New Roman',serif;padding:1.5rem;max-width:800px;margin:0 auto}h1{text-align:center;color:#1976d2}.sec{background:#e3f2fd;padding:1.2rem;border-radius:10px;margin:1.2rem 0}.btn{display:flex;gap:1rem;flex-wrap:wrap}.btn>*{padding:0.8rem 1.5rem;border-radius:10px;border:none;font-weight:600}.b1{background:#1976d2;color:white}.b2{background:#4caf50;color:white}.b3{background:#ff9800;color:white}</style>
 </head>
 <body>
   <h1>Bài 6: Rút gọn biểu thức chứa căn bậc hai</h1>
-
-  <div class="section">
+  <div class="sec">
     <h2>1. Nội dung chính</h2>
-    <p>Để rút gọn biểu thức chứa căn bậc hai, ta thường:</p>
-    <ul>
-      <li>Đưa thừa số ra ngoài dấu căn: $\sqrt{A^2B} = |A|\sqrt{B}$ (với $B \geq 0$)</li>
-      <li>Khử mẫu của biểu thức lấy căn</li>
-      <li>Trục căn thức ở mẫu</li>
-    </ul>
-    <p><strong>Ví dụ:</strong> Rút gọn $\sqrt{18} + \sqrt{8}$</p>
-    <p><strong>Giải:</strong> $\sqrt{18} = \sqrt{9 \cdot 2} = 3\sqrt{2}$, $\sqrt{8} = \sqrt{4 \cdot 2} = 2\sqrt{2}$</p>
-    <p>→ Tổng: $3\sqrt{2} + 2\sqrt{2} = 5\sqrt{2}$</p>
+    <p>Để rút gọn biểu thức chứa căn bậc hai, ta thường:<br>
+    - Đưa thừa số ra ngoài dấu căn: $\sqrt{A^2B} = |A|\sqrt{B}$ (với $B \geq 0$)<br>
+    - Khử mẫu của biểu thức lấy căn<br>
+    - Trục căn thức ở mẫu</p>
   </div>
-
-  <div class="section">
-    <h2>2. Bài tập</h2>
-    <p>Rút gọn các biểu thức sau:</p>
-    <p>a) $\sqrt{50} - \sqrt{18}$</p>
-    <p>b) $\dfrac{1}{\sqrt{2}} + \dfrac{1}{\sqrt{8}}$</p>
+  <div class="sec">
+    <h2>2. Ví dụ</h2>
+    <p>Rút gọn: $\sqrt{18} + \sqrt{8}$</p>
+    <p><strong>Giải:</strong> $\sqrt{18} = \sqrt{9 \cdot 2} = 3\sqrt{2}$, $\sqrt{8} = \sqrt{4 \cdot 2} = 2\sqrt{2}$<br>
+    → Tổng: $3\sqrt{2} + 2\sqrt{2} = 5\sqrt{2}$</p>
   </div>
-
-  <!-- NÚT CHỨC NĂNG CHUẨN HSTAI 777 -->
-  <div class="btn-bar">
-    <button class="btn btn-back" onclick="history.back()">← Quay lại</button>
-    <a href="../index.html" class="btn btn-home">🏠 Về trang chủ</a>
-    <button class="btn btn-next" onclick="goToNext()">➡️ Bài tiếp theo</button>
+  <div class="btn">
+    <button class="b1" onclick="history.back()">← Quay lại</button>
+    <a class="b2" href="../index.html">🏠 Về trang chủ</a>
+    <button class="b3" onclick="window.location.href='hh-ch1-bai1.html'">➡️ Bài tiếp theo</button>
   </div>
-
   <script>
-    // Render công thức toán học
-    document.addEventListener("DOMContentLoaded", () => {
-      renderMathInElement(document.body, {
-        delimiters: [
-          { left: "$$", right: "$$", display: true },
-          { left: "$", right: "$", display: false }
-        ]
-      });
-    });
-
-    // Thống kê lượt học
-    localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons') || '0') + 1).toString());
-    // Chuyển sang bài tiếp theo
-    function goToNext() {
-      // Theo thứ tự bạn có: sau ds-ch1-bai6 là hh-ch1-bai1
-      window.location.href = 'hh-ch1-bai1.html';
-    }
+    document.addEventListener("DOMContentLoaded", () => { renderMathInElement(document.body); });
+    localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons')||'0')+1).toString());
   </script>
 </body>
 </html>

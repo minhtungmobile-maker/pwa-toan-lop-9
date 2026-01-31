@@ -2,111 +2,34 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hệ thức lượng – Toán 9</title>
-
-  <!-- KaTeX -->
+  <title>Bài 1: Một số hệ thức về cạnh và đường cao trong tam giác vuông</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
-
-  <!-- CSS -->
-  <style>
-    body {
-      font-family: 'Inter', Arial, sans-serif;
-      line-height: 1.6;
-      padding: 1.5rem;
-      max-width: 800px;
-      margin: 0 auto;
-      background: #f9f9f9;
-      color: #212121;
-    }
-    h1, h2 {
-      color: #1976d2;
-      margin: 1.2rem 0;
-    }
-    .formula-box, .example-box, .exercise-box {
-      background: #e3f2fd;
-      padding: 1.2rem;
-      border-radius: 12px;
-      margin: 1.5rem 0;
-    }
-    .back-buttons {
-      margin-top: 2rem;
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-    .btn {
-      background: #1976d2;
-      color: white;
-      border: none;
-      padding: 0.6rem 1.2rem;
-      border-radius: 8px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
-    .btn-home { background: #4caf50; }    .btn-next { background: #ff9800; }
-  </style>
+  <style>body{font-family:'Times New Roman',serif;padding:1.5rem;max-width:800px;margin:0 auto}h1{text-align:center;color:#1976d2}.sec{background:#e3f2fd;padding:1.2rem;border-radius:10px;margin:1.2rem 0}.btn{display:flex;gap:1rem;flex-wrap:wrap}.btn>*{padding:0.8rem 1.5rem;border-radius:10px;border:none;font-weight:600}.b1{background:#1976d2;color:white}.b2{background:#4caf50;color:white}.b3{background:#ff9800;color:white}</style>
 </head>
 <body>
-  <h1>📐 Hệ thức lượng trong tam giác vuông</h1>
-  <p><strong>Mức độ:</strong> Trung bình | <strong>Chuẩn SGK Bộ GD&ĐT 2024</strong></p>
-
-  <div class="formula-box">
-    <h2>📌 Các hệ thức cơ bản</h2>
-    <p>Cho tam giác $ABC$ vuông tại $A$, đường cao $AH$. Khi đó:</p>
-    <ol>
-      <li>$AB^2 = BH \cdot BC$</li>
-      <li>$AC^2 = CH \cdot BC$</li>
-      <li>$AH^2 = BH \cdot CH$</li>
-      <li>$AB \cdot AC = BC \cdot AH$</li>
-      <li>$\dfrac{1}{AH^2} = \dfrac{1}{AB^2} + \dfrac{1}{AC^2}$</li>
-    </ol>
+  <h1>Bài 1: Một số hệ thức về cạnh và đường cao trong tam giác vuông</h1>
+  <div class="sec">
+    <h2>1. Các hệ thức</h2>
+    <p>Cho $\triangle ABC$ vuông tại $A$, đường cao $AH$. Ta có:<br>
+    1. $AB^2 = BH \cdot BC$<br>
+    2. $AC^2 = CH \cdot BC$<br>
+    3. $AH^2 = BH \cdot CH$</p>
   </div>
-
-  <div class="example-box">
-    <h2>✅ Ví dụ mẫu</h2>
-    <p>Cho tam giác $ABC$ vuông tại $A$, $AB = 6\,\text{cm}, AC = 8\,\text{cm}$. Tính độ dài đường cao $AH$.</p>
-    <p><strong>Giải:</strong></p>
-    <p>- Tính cạnh huyền: $BC = \sqrt{AB^2 + AC^2} = \sqrt{36 + 64} = \sqrt{100} = 10\,\text{cm}$</p>
-    <p>- Áp dụng hệ thức: $AB \cdot AC = BC \cdot AH$</p>
-    <p>→ $6 \cdot 8 = 10 \cdot AH$ → $AH = \dfrac{48}{10} = 4.8\,\text{cm}$</p>
+  <div class="sec">
+    <h2>2. Ví dụ</h2>
+    <p>Tính $AH$ biết $AB = 6\,\text{cm}, AC = 8\,\text{cm}$.</p>
+    <p><strong>Giải:</strong> $BC = \sqrt{6^2 + 8^2} = 10$, $AH = \dfrac{AB \cdot AC}{BC} = \dfrac{48}{10} = 4.8\,\text{cm}$</p>
   </div>
-
-  <div class="exercise-box">
-    <h2>✏️ Bài tập áp dụng</h2>
-    <p>Cho tam giác $ABC$ vuông tại $A$, $AB = 3\,\text{cm}, AC = 4\,\text{cm}$. Tính $AH$.</p>
-    <p><strong>Gợi ý:</strong> Làm tương tự ví dụ trên.</p>
-    <p><strong>Đáp án:</strong> $AH = 2.4\,\text{cm}$</p>
+  <div class="btn">
+    <button class="b1" onclick="history.back()">← Quay lại</button>
+    <a class="b2" href="../index.html">🏠 Về trang chủ</a>
+    <button class="b3" onclick="window.location.href='ds-ch2-bai1.html'">➡️ Bài tiếp theo</button>
   </div>
-
-  <!-- NÚT CHỨC NĂNG -->
-  <div class="back-buttons">
-    <button class="btn" onclick="history.back()">← Quay lại</button>
-    <a href="../index.html" class="btn btn-home">🏠 Về trang chủ</a>
-    <button class="btn btn-next" onclick="goToNext()">➡️ Bài tiếp theo</button>
-  </div>
-
   <script>
-    // Render công thức
-    document.addEventListener("DOMContentLoaded", () => {
-      renderMathInElement(document.body, {
-        delimiters: [
-          { left: "$$", right: "$$", display: true },
-          { left: "$", right: "$", display: false }
-        ]      });
-    });
-
-    // Thống kê lượt học
-    localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons') || '0') + 1).toString());
-
-    // Nút "Bài tiếp"
-    function goToNext() {
-      alert("Bài tiếp: Tỉ số lượng giác của góc nhọn");
-      // window.location.href = 'hh-ch1-bai2.html';
-    }
+    document.addEventListener("DOMContentLoaded", () => { renderMathInElement(document.body); });
+    localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons')||'0')+1).toString());
   </script>
 </body>
 </html>

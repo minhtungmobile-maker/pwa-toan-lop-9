@@ -2,60 +2,30 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Bài 6: Cung chứa góc</title>
-  <link rel="stylesheet" href="../css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
-  <script defer src="../js/katex-render.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+  <style>body{font-family:'Times New Roman',serif;padding:1.5rem;max-width:800px;margin:0 auto}h1{text-align:center;color:#1976d2}.sec{background:#e3f2fd;padding:1.2rem;border-radius:10px;margin:1.2rem 0}.btn{display:flex;gap:1rem;flex-wrap:wrap}.btn>*{padding:0.8rem 1.5rem;border-radius:10px;border:none;font-weight:600}.b1{background:#1976d2;color:white}.b2{background:#4caf50;color:white}.b3{background:#ff9800;color:white}</style>
 </head>
 <body>
-  <header>
-    <h1>📐 Toán 9 – Hình học</h1>
-    <p>Bài 6: Cung chứa góc</p>
-    <button id="export-pdf">📄 PDF</button>
-  </header>
-
-  <main class="lesson-page">
-    <div class="lesson-content">
-      <h2>1. Định nghĩa</h2>
-      <p>Quỹ tích các điểm \( M \) nhìn đoạn thẳng \( AB \) dưới một góc \( \alpha \) (\( 0^\circ < \alpha < 180^\circ \)) là hai cung tròn có cùng dây \( AB \), gọi là <strong>cung chứa góc \( \alpha \)</strong>.</p>
-      
-      <h2>2. Cách vẽ</h2>
-      <ol>
-        <li>Vẽ đoạn \( AB \)</li>
-        <li>Vẽ tia \( Ax \) sao cho \( \widehat{BAx} = \alpha \)</li>
-        <li>Vẽ đường thẳng \( d \perp Ax \) tại \( A \)</li>
-        <li>Vẽ trung trực \( m \) của \( AB \)</li>
-        <li>Giao điểm \( O = d \cap m \) là tâm cung</li>
-        <li>Vẽ cung tròn \( AmB \)</li>
-      </ol>
-      
-      <h2>3. Ứng dụng</h2>
-      <p>Dùng để chứng minh tứ giác nội tiếp, tìm quỹ tích điểm.</p>
-      
-      <h2>4. Bài tập tự luyện</h2>
-      <p><strong>Câu 1:</strong> Dựng cung chứa góc \( 60^\circ \) dựng trên đoạn \( AB = 4\,\text{cm} \).</p>
-    </div>
-  </main>
-
-  <footer>
-    <p><a href="../index.html">← Quay về trang chủ</a></p>
-  </footer>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <h1>Bài 6: Cung chứa góc</h1>
+  <div class="sec">
+    <h2>1. Định nghĩa</h2>
+    <p>Quỹ tích các điểm $M$ nhìn đoạn thẳng $AB$ dưới một góc $\alpha$ ($0^\circ < \alpha < 180^\circ$) là hai cung tròn có dây $AB$.</p>
+  </div>
+  <div class="sec">
+    <h2>2. Ứng dụng</h2>
+    <p>Dùng để chứng minh tứ giác nội tiếp đường tròn.</p>
+  </div>
+  <div class="btn">
+    <button class="b1" onclick="history.back()">← Quay lại</button>
+    <a class="b2" href="../index.html">🏠 Về trang chủ</a>
+    <button class="b3" onclick="alert('Đây là bài cuối cùng.')">➡️ Bài tiếp theo</button>
+  </div>
   <script>
-    document.getElementById('export-pdf')?.addEventListener('click', () => {
-      const element = document.querySelector('.lesson-content');
-      const opt = {
-        margin: 10,
-        filename: 'Toan9_HH_Ch3_Bai6.pdf',
-        image: { type: 'jpeg', quality: 0.98 },
-        html2canvas: { scale: 2 },
-        jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
-      };
-      html2pdf().set(opt).from(element).save();
-    });
+    document.addEventListener("DOMContentLoaded", () => { renderMathInElement(document.body); });
+    localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons')||'0')+1).toString());
   </script>
 </body>
 </html>
