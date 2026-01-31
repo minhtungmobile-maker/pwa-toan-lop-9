@@ -1,62 +1,182 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Toán Lớp 9</title>
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#1976d2">
-  <link rel="apple-touch-icon" href="icon-192.png">
-  <style>
-    :root { --primary: #1976d2; --light-bg: #f5f9ff; --card-bg: #ffffff; --text-color: #212121; }
-    body { font-family: 'Inter', sans-serif; line-height: 1.6; color: var(--text-color); background: var(--light-bg); padding-bottom: 2rem; }
-    header { background: var(--primary); color: white; text-align: center; padding: 1.2rem 1rem; position: relative; }
-    .card { max-width: 800px; margin: 1.5rem auto; padding: 1.5rem; background: var(--card-bg); border-radius: 16px; box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
-    .topic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin-top: 1rem; }
-    .topic { padding: 1rem; background: #e3f2fd; border-radius: 10px; cursor: pointer; }
-    .topic:hover { background: #bbdefb; }
-    footer { text-align: center; padding: 1.5rem; color: #666; font-size: 0.9rem; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PWA Toán Lớp 9 – HSTAI 777</title>
+
+<meta name="theme-color" content="#1976d2">
+<link rel="icon" href="icon-192.png">
+
+<style>
+:root {
+  --primary: #1976d2;
+  --bg: #f5f9ff;
+  --card: #ffffff;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+}
+header {
+  background: var(--primary);
+  color: white;
+  text-align: center;
+  padding: 1.2rem;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+}
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  padding: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+.item {
+  background: #e3f2fd;
+  padding: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  text-align: center;
+  font-size: 1.05rem;
+}
+.item:hover {
+  background: #bbdefb;
+}
+#content {
+  line-height: 1.6;
+}
+.exercise {
+  background: #f1f8e9;
+  padding: 0.8rem;
+  border-radius: 10px;
+  margin-top: 0.8rem;
+}
+.answer {
+  color: #2e7d32;
+  font-weight: bold;
+}
+footer {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #555;
+  padding: 1rem;
+}
+</style>
 </head>
+
 <body>
-  <header><h1>📘 TOÁN LỚP 9</h1></header>
 
+<header>
+  <h1>📘 PWA TOÁN LỚP 9</h1>
+  <p>Học sinh yếu vẫn theo được – Chuẩn Bộ GD&ĐT</p>
+</header>
+
+<div class="container">
+
+  <!-- MENU -->
   <div class="card">
-    <h2>📚 HỌC THEO DẠNG TOÁN</h2>
-    <div class="topic-grid">
-      <div class="topic" onclick="goTo('lessons/ds-ch1-bai6.html')">🔢 Căn bậc hai</div>
-      <div class="topic" onclick="goTo('lessons/hh-ch1-bai1.html')">📐 Hệ thức lượng</div>
-      <div class="topic" onclick="goTo('lessons/ds-ch2-bai1.html')">📈 Hàm số bậc nhất</div>
-      <div class="topic" onclick="goTo('lessons/ds-ch3-bai1.html')">🧮 Hệ phương trình</div>
-      <div class="topic" onclick="goTo('lessons/ds-ch4-bai1.html')">📉 Hàm số y = ax²</div>
-      <div class="topic" onclick="goTo('lessons/hh-ch2-bai1.html')">⭕ Đường tròn</div>
-      <div class="topic" onclick="goTo('lessons/hh-ch3-bai6.html')">🎯 Cung chứa góc</div>
+    <h2>📚 HỌC THEO CHUYÊN ĐỀ</h2>
+    <div class="grid">
+      <div class="item" onclick="loadChuong1()">🔢 Căn bậc hai</div>
+      <div class="item" onclick="comingSoon()">📈 Hàm số bậc nhất</div>
+      <div class="item" onclick="comingSoon()">🧮 Hệ phương trình</div>
+      <div class="item" onclick="comingSoon()">📐 Hình học</div>
     </div>
   </div>
 
   <div class="card">
-    <h2>📝 LUYỆN ĐỀ THI THẬT</h2>
-    <div class="topic-grid">
-      <div class="topic" onclick="goTo('exercises/de-on-thi-vao-10-de-1.html')">Đề 1 – Tổng hợp</div>
-      <div class="topic" onclick="goTo('exercises/de-on-thi-vao-10-de-2.html')">Đề 2 – Nâng cao</div>
-      <div class="topic" onclick="goTo('exercises/de-1-tiet-ch1.html')">Kiểm tra 1 tiết – Chương I</div>
-      <div class="topic" onclick="goTo('exercises/de-kiem-tra-15p-ch1.html')">Kiểm tra 15 phút – Chương I</div>
+    <h2>📝 LUYỆN ĐỀ THI</h2>
+    <div class="grid">
+      <div class="item" onclick="loadDeThi()">Đề tổng hợp mẫu</div>
+      <div class="item" onclick="comingSoon()">Đề kiểm tra 1 tiết</div>
+      <div class="item" onclick="comingSoon()">Đề 15 phút</div>
     </div>
   </div>
 
-  <footer><p>© 2026 | HSTAI 777</p></footer>
+  <!-- NỘI DUNG HIỂN THỊ -->
+  <div class="card" id="content">
+    <h2>Chào mừng</h2>
+    <p>Chọn bài học hoặc đề thi để bắt đầu.</p>
+  </div>
 
-  <script>
-    function goTo(url) {
-      if (url.includes('/lessons/')) localStorage.setItem('toan9_lessons', (parseInt(localStorage.getItem('toan9_lessons') || '0') + 1).toString());
-      else if (url.includes('/exercises/')) localStorage.setItem('toan9_exercises', (parseInt(localStorage.getItem('toan9_exercises') || '0') + 1).toString());
-      window.location.href = url;
-    }
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js');
-      });
-    }
-  </script>
+</div>
+
+<footer>
+  © HSTAI 777 – Giáo dục phổ thông cơ sở
+</footer>
+
+<script>
+// ===== CHƯƠNG 1 =====
+function loadChuong1() {
+  document.getElementById("content").innerHTML = `
+    <h2>Chương 1: Căn bậc hai</h2>
+
+    <p><b>1. Khái niệm</b></p>
+    <p>Căn bậc hai của số không âm a là số x sao cho x² = a.</p>
+
+    <p><b>Ví dụ:</b></p>
+    <ul>
+      <li>√4 = 2</li>
+      <li>√9 = 3</li>
+      <li>√16 = 4</li>
+    </ul>
+
+    <p><b>2. Điều kiện xác định</b></p>
+    <p>Biểu thức √a xác định khi a ≥ 0.</p>
+
+    <div class="exercise">
+      <p><b>Bài 1:</b> Tính √25</p>
+      <p class="answer">Đáp án: 5</p>
+    </div>
+
+    <div class="exercise">
+      <p><b>Bài 2:</b> Tìm x, biết √x = 7</p>
+      <p class="answer">Đáp án: x = 49</p>
+    </div>
+
+    <div class="exercise">
+      <p><b>Bài 3:</b> So sánh √5 và √7</p>
+      <p class="answer">Đáp án: √5 &lt; √7</p>
+    </div>
+  `;
+}
+
+// ===== ĐỀ THI MẪU =====
+function loadDeThi() {
+  document.getElementById("content").innerHTML = `
+    <h2>Đề thi mẫu Toán 9</h2>
+
+    <p><b>Câu 1:</b> Tính √36</p>
+    <p class="answer">Đáp án: 6</p>
+
+    <p><b>Câu 2:</b> Tìm x: √x = 5</p>
+    <p class="answer">Đáp án: x = 25</p>
+
+    <p><b>Câu 3:</b> So sánh √10 và √12</p>
+    <p class="answer">Đáp án: √10 &lt; √12</p>
+
+    <p><i>Thời gian làm bài: 90 phút</i></p>
+  `;
+}
+
+// ===== CHƯA MỞ =====
+function comingSoon() {
+  document.getElementById("content").innerHTML = `
+    <h2>Đang cập nhật</h2>
+    <p>Nội dung sẽ được mở trong phiên bản tiếp theo.</p>
+  `;
+}
+</script>
+
 </body>
 </html>
